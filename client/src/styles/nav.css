@@ -1,0 +1,17 @@
+div#nav{
+    width:100vw;
+    height:10vh;
+    box-sizing: border-box;
+    box-shadow: 2px 2px 4px black;
+    display:grid;
+    grid-template-columns: 90vw 10vw;
+}
+
+div#log , div#ham{
+    box-sizing: border-box;
+    padding:5px;
+}
+
+#user_img{
+    width:4vw;
+}
