@@ -4,14 +4,24 @@ div#nav{
     box-sizing: border-box;
     box-shadow: 2px 2px 4px black;
     display:grid;
-    grid-template-columns: 90vw 10vw;
+    grid-template-columns: 20vw 70vw 10vw;
 }
 
-div#log , div#ham{
+div#log , div#ham , div#notep{
     box-sizing: border-box;
-    padding:5px;
+    padding:10px;
+}
+div#notep{
+    
+    text-align: left;
+    color:#05b7e8;
+    font-weight: bold;
 }
 
 #user_img{
-    width:4vw;
+    width:2.5vw;
+}
+
+#note_img{
+    width:2.5vw;
 }
