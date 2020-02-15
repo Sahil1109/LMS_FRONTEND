@@ -35,6 +35,6 @@ button#dashb{
 }
 
 #sidebar button:hover{
-    background: rgb(29, 208, 240);
+    background: #05b7e8;
     color:white;
 }
