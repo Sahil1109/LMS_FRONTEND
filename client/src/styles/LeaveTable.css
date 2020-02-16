@@ -1,0 +1,27 @@
+#table table{
+    /* border:1px solid black; */
+    box-shadow: 2px 2px 3px black;
+    border-radius: 5px;
+    display: block;
+    width:60vw;
+    height: 37vh;
+    overflow-y: scroll;
+}
+
+td , th{
+    box-sizing: border-box;
+    width:12vw;
+    height: 7vh;
+    padding:1rem;
+    margin:0;
+    
+}
+
+#thr{
+    background: #d4d3d3;
+}
+
+#pen_img{
+    width:2vw;
+    cursor: pointer;
+}
