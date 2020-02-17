@@ -6,9 +6,9 @@ function LeaveEntry(props) {
     }
     return (
         <tr style={style}>
-            <td>{props.entry.leaveType}</td>
-            <td>{props.entry.Date}</td>
-            <td>{props.entry.Days}</td>
+            <td>{props.entry.type}</td>
+            <td>{props.entry.date}</td>
+            <td>{props.entry.days}</td>
             <td >{props.entry.status}</td>
             <td><img src={require('../icons/pen.png')} id="pen_img" alt="User"></img></td>
         </tr>

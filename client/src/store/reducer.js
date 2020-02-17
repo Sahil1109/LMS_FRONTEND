@@ -2,38 +2,58 @@ const initialState = {
     data: [
         {
             id:1,
-            leaveType:'Sick',
-            Date:'14 Feb 2020',
-            Days:1,
+            type:'Sick',
+            date:'14 Feb 2020',
+            days:1,
             status:'pending'
         },
         {
             id:2,
-            leaveType:'Casual',
-            Date:'14 Feb 2020',
-            Days:2,
+            type:'Casual',
+            date:'14 Feb 2020',
+            days:2,
             status:'rejected'
         },
         {
             id:3,
-            leaveType:'Paid',
-            Date:'14 Feb 2020',
-            Days:3,
+            type:'Paid',
+            date:'14 Feb 2020',
+            days:3,
             status:'approved'
         },
         {
             id:4,
-            leaveType:'Paid',
-            Date:'14 Feb 2020',
-            Days:3,
+            type:'Paid',
+            date:'14 Feb 2020',
+            days:3,
             status:'approved'
         },
         {
             id:5,
-            leaveType:'Paid',
-            Date:'14 Feb 2020',
-            Days:3,
+            type:'Paid',
+            date:'14 Feb 2020',
+            days:3,
             status:'approved'
+        }
+    ],
+    leaves: [
+        {
+            type:'Sick',
+            available:5,
+            taken:2,
+            total:7
+        },
+        {
+            type:'Casual',
+            available:4,
+            taken:3,
+            total:7
+        },
+        {
+            type:'Paid',
+            available:14,
+            taken:1,
+            total:15
         }
     ]
 }
@@ -42,9 +62,26 @@ const rootReducer = (state = initialState, action) => {
     switch(action.type) {
         case 'ADD_LEAVE_REQUEST':
             let currData = state.data
-            currData.concat(action.data)
+            let currLeaves = state.leaves
+
+            for(let index in state.leaves) {
+                if(state.leaves[index].available < action.data.days) {
+                    return state;
+                }
+            }
+            currData = currData.concat(action.data)
             return {
-                data: currData
+                data: currData,
+                leaves: currLeaves.map((item, index) => {
+                    if(item.available >= action.data.days && item.type === action.data.type) {
+                        return {
+                            ...item,
+                            available: item.available - action.data.days,
+                            taken: item.taken + action.data.days
+                        }
+                    }
+                    return item
+                })
             }
         default:
             return state
