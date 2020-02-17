@@ -1,6 +1,5 @@
-import React,{useState} from 'react'
+import React from 'react'
 import LeaveListEntry from './LeaveListEntry'
-import leaves from '../data/leaves'
 import { connect } from 'react-redux'
 import '../styles/leaveList.css'
 
