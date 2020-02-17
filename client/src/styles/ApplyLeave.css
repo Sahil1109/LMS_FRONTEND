@@ -1,0 +1,75 @@
+.applyLeave{
+    margin-top: 100px;
+    margin-left: 200px;
+    background: #ffffff;
+    box-shadow: 2px 2px 2px 2px;
+    border-radius: 5px;
+    margin-right: 20px;
+    padding-left: 20px;
+}
+.reason{
+    padding-bottom: 30px;
+    padding-top: 30px;
+    padding-left: 20px;
+}
+
+.apply{
+    padding-bottom: 30px;
+    padding-top: 30px;
+    padding-left: 20px;
+}
+
+.uploadDoc{
+    padding-bottom: 30px;
+    padding-top: 30px;
+    padding-left: 20px;
+}
+
+.uploadDocButton::-webkit-file-upload-button {
+    visibility: hidden;
+  }
+  .uploadDocButton::before {
+    content: 'Attach file';
+    display: inline-block;
+    background: -webkit-linear-gradient(top, #0e69be, #3960df);
+    border: 1px solid #999;
+    border-radius: 3px;
+    padding: 5px 8px;
+    outline: none;
+    white-space: nowrap;
+    -webkit-user-select: none;
+    cursor: pointer;
+    /* text-shadow: 1px 1px #fff; */
+    font-weight: 700;
+    font-size: 10pt;
+    color: white;
+  }
+  .uploadDocButton:hover::before {
+    border-color:white;
+  }
+  .uploadDocButton:active::before {
+    background: -webkit-linear-gradient(top, #e3e3e3, #f9f9f9);
+  }
+
+  .applyButton{
+    display: inline-block;
+    background: -webkit-linear-gradient(top, #0e69be, #3960df);
+    border: 1px solid #999;
+    border-radius: 3px;
+    padding: 5px 8px;
+    outline: none;
+    white-space: nowrap;
+    -webkit-user-select: none;
+    cursor: pointer;
+    /* text-shadow: 1px 1px #fff; */
+    font-weight: 700;
+    font-size: 10pt;
+    color: white;
+  }
+
+  .applyButton:hover::before {
+    border-color:white;
+  }
+  .applyDocButton:active::before {
+    background: -webkit-linear-gradient(top, #e3e3e3, #f9f9f9);
+  }
