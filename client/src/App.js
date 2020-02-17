@@ -3,17 +3,27 @@ import React from 'react';
 import Nav from './components/Nav'
 import Sidebar from './components/SideBar'
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 import LeaveTable from './components/LeaveTable'
 import LeaveList from './components/LeaveList'
 import { connect } from 'react-redux'
->>>>>>> 68336b17b1260b2815a6a2a906444abf069b45be
+
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route
+} from "react-router-dom";
+
+import { connect } from 'react-redux'
 import EmpDashboard from './components/EmpDashboard'
+import ApplyLeave from './components/ApplyLeave'
 
 import './App.css';
 
 function App(props) {
   return (
+    <Router>
     <div className="App" id="app">
       {/* this will contain only our navbar */}
       <div id="top">
@@ -25,7 +35,18 @@ function App(props) {
       {/* this will also stay same in every dashboard except the botton component will change */}
       <Sidebar></Sidebar>
       {/* your application div should be placed inside a div like this */}
-      <EmpDashboard></EmpDashboard>
+
+          <div>
+            <Switch>
+              <Route path="/addLeave">
+                <ApplyLeave />
+              </Route>
+              <Route path="/">
+                <EmpDashboard />
+              </Route>
+            </Switch>
+          </div>
+
       <button onClick={props.addLeave}>Add Leave</button>
 
       </div>
@@ -33,6 +54,7 @@ function App(props) {
      
      
     </div>
+    </Router>
   );
 }
 const mapDispatchToProps = dispatch => {
