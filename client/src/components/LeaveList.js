@@ -1,15 +1,13 @@
 import React,{useState} from 'react'
 import LeaveListEntry from './LeaveListEntry'
 import leaves from '../data/leaves'
+import { connect } from 'react-redux'
 import '../styles/leaveList.css'
 
-function LeaveList() {
-    let [leaveslist,setLeaveslist]=useState(leaves)
-
-
+function LeaveList(props) {
     const getData=()=>{
-        return (leaveslist.map((leave)=>{
-            return <LeaveListEntry leave={leave}></LeaveListEntry>
+        return (props.leaves.map((leave, index)=>{
+            return <LeaveListEntry key={index} leave={leave}></LeaveListEntry>
         }))
     }
     return (
@@ -29,4 +27,10 @@ function LeaveList() {
     )
 }
 
-export default LeaveList
+const mapStateToProps = state => {
+    return {
+        leaves: state.leaves
+    }
+}
+
+export default connect(mapStateToProps)(LeaveList)
