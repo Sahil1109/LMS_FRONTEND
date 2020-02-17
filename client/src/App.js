@@ -2,9 +2,12 @@ import React from 'react';
 
 import Nav from './components/Nav'
 import Sidebar from './components/SideBar'
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route
+} from "react-router-dom";
 
-import LeaveTable from './components/LeaveTable'
-import LeaveList from './components/LeaveList'
 import { connect } from 'react-redux'
 import EmpDashboard from './components/EmpDashboard'
 
@@ -23,7 +26,18 @@ function App(props) {
       {/* this will also stay same in every dashboard except the botton component will change */}
       <Sidebar></Sidebar>
       {/* your application div should be placed inside a div like this */}
-      <EmpDashboard></EmpDashboard>
+        <Router>
+          <div>
+            <Switch>
+              {/* <Route path="/addLeave">
+                <AddLeaveComponent />
+              </Route> */}
+              <Route path="/">
+                <EmpDashboard />
+              </Route>
+            </Switch>
+          </div>
+      </Router>
       <button onClick={props.addLeave}>Add Leave</button>
 
       </div>
