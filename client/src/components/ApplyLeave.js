@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import Date from './Date'
-import TypeOfLeave from './TypeOfLeave'
+// import TypeOfLeave from './TypeOfLeave'
 import '../styles/ApplyLeave.css'
 
 class ApplyLeave extends Component {
@@ -9,8 +9,14 @@ class ApplyLeave extends Component {
     
         this.state = {
              reason:'',
-             file: null
+             file: null,
+             type: ''
         }
+    }
+    handleChange=(event)=>{
+        this.setState({
+            type: event.target.value,
+        })
     }
     handleFile(e){
         let file = e.target.files[0];
@@ -31,7 +37,7 @@ class ApplyLeave extends Component {
     }
 
     onSubmitButton=(event)=>{
-        alert(`Your reason is: ${this.state.reason } & Your ${this.state.file.name} is uploaded.`)
+        alert(`Your type of leave is ${this.state.type }, Your reason is: ${this.state.reason } & Your ${this.state.file.name} is uploaded.`)
         event.preventDefault()
     }
     
@@ -40,7 +46,22 @@ class ApplyLeave extends Component {
             <div className="applyLeave">
             <form onSubmit={this.onSubmitButton}>
             <Date></Date>
-            <TypeOfLeave></TypeOfLeave>
+            <div>
+            <div className="TypeOfLeave">
+              <h3>Choose type of leave <span>
+                <select value={this.state.type}
+                onChange={this.handleChange} className="typeOfLeaveDropdown">
+                <option value="N/A">Choose type</option>
+                <option value="Sick">Sick leave</option>
+                <option value="Casual">Maternal leave</option>
+                <option value="Paid">Casual leave</option>
+                </select>
+                </span></h3>
+             {
+            //    <div>{(this.state.type==="N/A") ? alert('Cant select this type'): `Selected leave is : ${this.state.type}`}</div>
+             }
+            </div>
+            </div>
 
             <div className="reason">
             <label>Reason </label> <span> <input type ="text" value={this.state.reason}
