@@ -23,10 +23,9 @@ class TypeOfLeave extends Component {
                 <select value={this.state.type}
                 onChange={this.handleChange} className="typeOfLeaveDropdown">
                 <option value="N/A">Choose type</option>
-                <option value="Sick leave">Sick leave</option>
-                <option value="Maternal leave">Maternal leave</option>
-                <option value="Casual leave">Casual leave</option>
-                <option value="Earn leave">Earn leave</option>
+                <option value="Sick">Sick leave</option>
+                <option value="Casual">Maternal leave</option>
+                <option value="Paid">Casual leave</option>
                 </select>
                 </span></h3>
              {
