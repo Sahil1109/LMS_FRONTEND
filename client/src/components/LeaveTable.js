@@ -1,13 +1,13 @@
 import React,{useState} from 'react'
 import data from '../data/data'
 import LeaveEntry from './LeaveEntry'
+import { connect } from 'react-redux'
 import '../styles/LeaveTable.css'
 
-function LeaveTable() {
-    let [entries,setEntry]=useState(data)
+function LeaveTable(props) {
 
     const getRows=()=>{
-        return entries.map((entry)=>{
+        return props.data.map((entry)=>{
             return <LeaveEntry id={entry.id} entry={entry}></LeaveEntry>
         })
     }
@@ -29,5 +29,10 @@ function LeaveTable() {
     )
 }
 
+const mapStateToProps = state => {
+    return {
+        data: state.data
+    }
+}
 
-export default LeaveTable
+export default connect(mapStateToProps)(LeaveTable)
