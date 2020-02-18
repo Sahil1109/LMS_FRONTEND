@@ -78,9 +78,10 @@ span{
     color:white;
     background:#05b7e8;
     transition: box-shadow 500ms;
+    cursor: pointer;
 }
 
-button:hover{
+#buttonA button:hover{
     box-shadow: 4px 4px 10px black;
 }
 
