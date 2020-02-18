@@ -1,5 +1,5 @@
 import React, {useState} from "react";
-import "./login.css"
+//import "./login.css"
 import PasswordMask from 'react-password-mask'
 //import Checkbox from "./Checkbox"
 
@@ -38,6 +38,7 @@ function Login(props){
            email===staticEmail 
          ){
            console.log("Working");
+           props.setAuthentication(true)
           }
        else{
            console.log("not working");
