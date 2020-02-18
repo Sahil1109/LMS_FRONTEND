@@ -59,11 +59,11 @@ const initialState = {
 };
 
 const rootReducer = (state = initialState, action) => {
-  console.log(action);
-  switch (action.type) {
-    case "ADD_LEAVE_REQUEST":
-      let currData = state.data;
-      let currLeaves = state.leaves;
+    console.log(state.data)
+    switch(action.type) {
+        case 'ADD_LEAVE_REQUEST':
+            let currData = state.data
+            let currLeaves = state.leaves
 
       for (let index in state.leaves) {
         if (

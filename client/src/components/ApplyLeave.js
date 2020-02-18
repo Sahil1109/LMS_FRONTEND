@@ -93,12 +93,12 @@ class ApplyLeave extends Component {
 
       alert("You Have Successfully Applied for a leave");
 
-      // emailNotify(
-      //   this.state.startdate,
-      //   this.state.noofdays,
-      //   this.state.type,
-      //   this.state.reason
-      // );
+      emailNotify(
+        startDate,
+        1,
+        this.state.type,
+        this.state.reason
+      );
       event.target.reset();
     }
   };
@@ -109,14 +109,17 @@ class ApplyLeave extends Component {
         <form onSubmit={this.onSubmitButton}>
           <div id="dateP">
             <label>Choose a date</label>
+
             <DatePicker
               onChange={this.onStartDateChange}
               value={this.state.startdate}
+              format="dd.MM.yyyy"
             />
 
             <DatePicker
               onChange={this.onEndDateChange}
               value={this.state.enddate}
+              format="dd.MM.yyyy"
             />
             <select
               value={this.state.endleavetype}
@@ -128,6 +131,7 @@ class ApplyLeave extends Component {
               <option value="half">Half Day</option>
             </select>
             {/* <input type="" */}
+
           </div>
 
           {/* <div id="noDays">
@@ -181,7 +185,7 @@ class ApplyLeave extends Component {
             <span id="warning">
               Note:Attaching document is compulsory if applied for
               <br />
-              two sick leaves.
+              more than 2 days sick leaves.
             </span>
           </div> */}
 

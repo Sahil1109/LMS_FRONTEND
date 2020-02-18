@@ -89,6 +89,13 @@ span#warning {
   font-size: 0.8rem;
   font-weight: bold;
 }
+
+#addButton{
+  padding:0.6rem;
+  border:1px solid black;
+  width:7vw;
+  height:6vh;
+}
 /* .uploadDocButton::-webkit-file-upload-button {
   visibility: hidden;
 }
