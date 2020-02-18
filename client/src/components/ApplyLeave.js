@@ -3,6 +3,8 @@ import Date from "./Date";
 // import TypeOfLeave from './TypeOfLeave'
 import "../styles/ApplyLeave.css";
 import DatePicker from "react-date-picker";
+import { connect } from 'react-redux'
+
 
 class ApplyLeave extends Component {
   constructor(props) {
@@ -49,10 +51,11 @@ class ApplyLeave extends Component {
   };
 
   onSubmitButton = event => {
-    alert(
-      `Date is ${this.state.date} No of days is ${this.state.noofdays} Your type of leave is ${this.state.type}, Your reason is: ${this.state.reason} & Your ${this.state.file.name} is uploaded.`
-    );
     event.preventDefault();
+    let appliedDate = this.state.date.toUTCString()
+    appliedDate = appliedDate.split(' ').slice(1, 4).join(' ');
+    this.props.addLeave(this.state.type, appliedDate, this.state.noofdays);
+    alert("You Have Successfully Applied for a leave");
   };
 
   render() {
@@ -82,8 +85,8 @@ class ApplyLeave extends Component {
               >
                 <option value="N/A">Choose type</option>
                 <option value="Sick">Sick leave</option>
-                <option value="Casual">Maternal leave</option>
-                <option value="Paid">Casual leave</option>
+                <option value="Casual">Casual leave</option>
+                <option value="Paid">Paid leave</option>
               </select>
 
               {
@@ -101,7 +104,7 @@ class ApplyLeave extends Component {
             ></input>
           </div>
 
-          <div className="uploadDoc">
+          {/* <div className="uploadDoc">
             <input
               type="file"
               name="file"
@@ -115,13 +118,12 @@ class ApplyLeave extends Component {
               <br />
               two sick leaves.
             </span>
-          </div>
+          </div> */}
 
           <div className="apply">
             <button
               type="submit"
               className="applyButton"
-              onClick={e => this.handleUpload(e)}
             >
               Apply
             </button>
@@ -132,4 +134,19 @@ class ApplyLeave extends Component {
   }
 }
 
-export default ApplyLeave;
+const mapDispatchToProps = dispatch => {
+  return {
+    addLeave: (type, date, days) => dispatch({
+      type: 'ADD_LEAVE_REQUEST',
+      data: {
+        id: 5,
+        type: type,
+        date: date.toString(),
+        days: Number(days),
+        status: 'pending'
+      },
+    }),
+  }
+}
+
+export default connect(null, mapDispatchToProps)(ApplyLeave);

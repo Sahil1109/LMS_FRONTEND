@@ -39,15 +39,15 @@ const initialState = {
     leaves: [
         {
             type:'Sick',
-            available:5,
+            available:7,
             taken:2,
-            total:7
+            total:10
         },
         {
             type:'Casual',
-            available:4,
+            available:7,
             taken:3,
-            total:7
+            total:10
         },
         {
             type:'Paid',
@@ -59,6 +59,7 @@ const initialState = {
 }
 
 const rootReducer = (state = initialState, action) => {
+    console.log(action);
     switch(action.type) {
         case 'ADD_LEAVE_REQUEST':
             let currData = state.data
