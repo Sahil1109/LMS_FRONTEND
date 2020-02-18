@@ -48,7 +48,7 @@ class ApplyLeave extends Component {
             <Date></Date>
             <div>
             <div className="TypeOfLeave">
-              <h3>Choose type of leave <span>
+              <label>Choose type of leave</label>
                 <select value={this.state.type}
                 onChange={this.handleChange} className="typeOfLeaveDropdown">
                 <option value="N/A">Choose type</option>
@@ -56,7 +56,7 @@ class ApplyLeave extends Component {
                 <option value="Casual">Maternal leave</option>
                 <option value="Paid">Casual leave</option>
                 </select>
-                </span></h3>
+               
              {
             //    <div>{(this.state.type==="N/A") ? alert('Cant select this type'): `Selected leave is : ${this.state.type}`}</div>
              }

@@ -1,6 +1,8 @@
 import React, {useState} from "react";
 //import "./login.css"
-import PasswordMask from 'react-password-mask'
+import '../styles/login.css'
+
+
 //import Checkbox from "./Checkbox"
 
 
@@ -54,59 +56,47 @@ function Login(props){
     return(
     
     
-      <div className = "Login">
-          <div>
-          <img className ="lockimg" src="lockn.png" alt ="img"/>
-          <h2>Leave Management System</h2>
+      <div id="loginBoard">
+          <div id="header">
+          
+          <img src={require('../icons/block8.png')} id="logo_img" alt="User"></img>
+          <h4>&nbsp;&nbsp;LMS | LOGIN</h4>
           </div>
           <form onSubmit = {handleSubmit}  >
-              {/* <FormGroup controlledId = "email" bsSize = "large">
-                  <FormLabel> Email</FormLabel>
-                  <FormControl
-                  autoFocus
-                  type = "email"
-                  value={email}
-                  onChange = {e => setEmail(e.target.value)}/>
-              </FormGroup>
-
-              <FormGroup controlledId ="password" bsSize ="large">
-                <FormLabel>Password</FormLabel>
-                <FormControl
-                    value = {password}
-                    onChange={e=> setPassword(e.target.value)}
-                    type ="password"/>
-              </FormGroup> */}
-    <div id = "impressive">
               
-          <div className="login1">
+    
+              
+          <div className="groupfield">
             <input type="text" 
               placeholder ="Email" 
               onChange = {emailChange}/>
           </div>
               
-          <div>
-           <PasswordMask 
+          <div className="groupfield">
+           <input 
               id = "passwordmask"
-              type="text" 
+              type="password" 
               placeholder ="Password"
               onChange={passwordChange}/>
-         </div>
+          </div>
               
-    </div>
+        <div id="buttonA">
+              <input id = "check" type ="checkbox" name ="check1"  /> <span>Remember me</span> <br/>
+              <a href="/">Forgot Password</a><br/><br/>
+              <button onClick ={buttonClick} 
+                block bsSize="large" 
+                disabled={!validateForm()} 
+                type="submit">
+                Log in
+              </button>
+
+        </div>
               
         
       
       
               
-              <input id = "check" type ="checkbox" name ="check1"  /> Remember me <br/>
-
-              <a href="/">Forgot Password</a><br/>
-              <button onClick ={buttonClick} 
-                      block bsSize="large" 
-                      disabled={!validateForm()} 
-                      type="submit">
-                       Log in
-              </button>
+              
               
           </form>
       </div>
