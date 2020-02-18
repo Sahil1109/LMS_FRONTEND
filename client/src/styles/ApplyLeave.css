@@ -1,75 +1,103 @@
 .applyLeave{
-    margin-top: 100px;
-    margin-left: 200px;
+    box-sizing: border-box;
+
+    /* margin-top: 100px; */
+    /* margin-left:1vw; */
+    height:89vh;
+    padding:1rem;
     background: #ffffff;
-    box-shadow: 2px 2px 2px 2px;
+    /* box-shadow: 2px 2px 2px 2px; */
+    border:1px solid black;
     border-radius: 5px;
     margin-right: 20px;
     padding-left: 20px;
+    
 }
-.reason{
-    padding-bottom: 30px;
-    padding-top: 30px;
-    padding-left: 20px;
-}
-
-.apply{
-    padding-bottom: 30px;
-    padding-top: 30px;
-    padding-left: 20px;
+.applyLeave form div{
+  box-sizing: border-box;
+  /* border:1px solid black; */
+  padding:0.7rem;
+  
 }
 
-.uploadDoc{
-    padding-bottom: 30px;
-    padding-top: 30px;
-    padding-left: 20px;
+form{
+  display:grid;
+  grid-template-rows:1fr 1fr 1fr 1fr 1fr;
 }
 
-.uploadDocButton::-webkit-file-upload-button {
-    visibility: hidden;
-  }
-  .uploadDocButton::before {
-    content: 'Attach file';
-    display: inline-block;
-    background: -webkit-linear-gradient(top, #0e69be, #3960df);
-    border: 1px solid #999;
-    border-radius: 3px;
-    padding: 5px 8px;
-    outline: none;
-    white-space: nowrap;
-    -webkit-user-select: none;
-    cursor: pointer;
-    /* text-shadow: 1px 1px #fff; */
-    font-weight: 700;
-    font-size: 10pt;
-    color: white;
-  }
-  .uploadDocButton:hover::before {
-    border-color:white;
-  }
-  .uploadDocButton:active::before {
-    background: -webkit-linear-gradient(top, #e3e3e3, #f9f9f9);
-  }
+label , input , select , span{
+  display:inline-block;
+  
+}
+label{
+  font-weight: bold;
+}
+span{
+  /* border:1px solid red; */
+}
+.reason , .uploadDoc , .TypeOfLeave{
+  display: grid;
+  grid-template-columns: 30fr 70fr;
+}
 
-  .applyButton{
-    display: inline-block;
-    background: -webkit-linear-gradient(top, #0e69be, #3960df);
-    border: 1px solid #999;
-    border-radius: 3px;
-    padding: 5px 8px;
-    outline: none;
-    white-space: nowrap;
-    -webkit-user-select: none;
-    cursor: pointer;
-    /* text-shadow: 1px 1px #fff; */
-    font-weight: 700;
-    font-size: 10pt;
-    color: white;
-  }
+.reason input,.TypeOfLeave select {
+  box-sizing: border-box;
+  padding:0.3rem;
+  width:40vw;
+  height:6vh;
+  border-radius:3px;
+  border:none;
+  box-shadow: 2px 2px 4px black;
+  font-size: 1.2rem;
+}
 
-  .applyButton:hover::before {
-    border-color:white;
-  }
-  .applyDocButton:active::before {
-    background: -webkit-linear-gradient(top, #e3e3e3, #f9f9f9);
-  }
+span#warning{
+  font-size: 0.9rem;
+  color:red;
+}
+.apply button{
+  box-sizing: border-box;
+  padding:0.7rem;
+  width:40vw;
+  font-size: 1rem;
+  border-radius:3px;
+  border:none;
+  box-shadow: 2px 2px 4px black;
+  background: #05b7e8;
+  margin-left:15vw;
+  color:white;
+  transition: box-shadow 500ms;
+  cursor:pointer;
+}
+
+.apply button:hover{
+  box-shadow: 4px 4px 8px black;
+}
+
+#sl{
+  padding:0.7rem;
+  font-size:0.8rem;
+  font-weight: bold;
+}
+/* .uploadDocButton::-webkit-file-upload-button {
+  visibility: hidden;
+}
+
+.uploadDocButton{
+  content: 'input file';
+  display: inline-block;
+  background: #05b7e8;
+  box-sizing:border-box;
+  /* width:10vw; 
+  border: 1px solid #999;
+  border-radius: 3px;
+  /* padding:1; 
+  outline: none;
+  white-space: nowrap;
+  -webkit-user-select: none;
+  cursor: pointer;
+  text-shadow: 1px 1px #fff;
+  font-weight: 700;
+  font-size: 10pt;
+} */
+

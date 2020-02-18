@@ -4,6 +4,7 @@
     border-radius: 5px;
     display: block;
     width:60vw;
+    margin-left:7vw;
     height: 40vh;
     overflow-y: scroll;
 }
@@ -14,6 +15,7 @@ td , th{
     height: 7vh;
     padding:1rem;
     margin:0;
+    text-align: center;
     
 }
 

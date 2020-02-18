@@ -19,18 +19,18 @@ class TypeOfLeave extends Component {
     render() {
         return (
             <div className="TypeOfLeave">
-              <h3>Choose type of leave <span>
+                <label>Choose type of leave</label> 
                 <select value={this.state.type}
                 onChange={this.handleChange} className="typeOfLeaveDropdown">
-                <option value="N/A">Choose type</option>
-                <option value="Sick">Sick leave</option>
-                <option value="Casual">Maternal leave</option>
-                <option value="Paid">Casual leave</option>
+                    <option value="N/A">Choose type</option>
+                    <option value="Sick">Sick leave</option>
+                    <option value="Casual">Maternal leave</option>
+                    <option value="Paid">Casual leave</option>
                 </select>
-                </span></h3>
-             {
-               <div>{(this.state.type==="N/A") ? alert('Cant select this type'): `Selected leave is : ${this.state.type}`}</div>
-             }
+               
+             
+               <br/><span id="sl">{(this.state.type==="N/A") ? alert('Cant select this type'): `Selected leave is : ${this.state.type}`}</span>
+             
             </div>
         )
     }

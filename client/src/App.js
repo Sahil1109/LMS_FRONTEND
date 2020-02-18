@@ -2,9 +2,7 @@ import React from 'react';
 
 import Nav from './components/Nav'
 import Sidebar from './components/SideBar'
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
+
 import LeaveTable from './components/LeaveTable'
 import LeaveList from './components/LeaveList'
 import { connect } from 'react-redux'
@@ -15,7 +13,6 @@ import {
   Route
 } from "react-router-dom";
 
-import { connect } from 'react-redux'
 import EmpDashboard from './components/EmpDashboard'
 import ApplyLeave from './components/ApplyLeave'
 

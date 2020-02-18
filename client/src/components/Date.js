@@ -3,7 +3,7 @@ import React from 'react'
 function Date() {
     return (
         <div>
-            <h3>Select dates of leave</h3>
+            <label>Select dates of leave</label>
         </div>
     )
 }
