@@ -12,8 +12,8 @@ function Login(props){
 
       const [email, setEmail] = useState("");
       const [password, setPassword] = useState("");
-      const staticEmail = "abc@gmail.com";
-      const staticPassword = "12345";
+      const staticEmail = "ravi@gmail.com";
+      const staticPassword = "password1";
 
     function validateForm(){
        return email.length > 0 && password.length>0;
