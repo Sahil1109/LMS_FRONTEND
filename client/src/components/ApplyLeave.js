@@ -113,11 +113,13 @@ class ApplyLeave extends Component {
             <DatePicker
               onChange={this.onStartDateChange}
               value={this.state.startdate}
+              format="dd.MM.yyyy"
             />
 
             <DatePicker
               onChange={this.onEndDateChange}
               value={this.state.enddate}
+              format="dd.MM.yyyy"
             />
             <select
               value={this.state.endleavetype}

@@ -15,8 +15,9 @@ function LeaveList(props) {
                 <tr>
                     <th> </th>
                     <th>Total</th>
-                    <th>Available</th>
                     <th>Availed</th>
+                    <th>Available</th>
+                    
                     
                 </tr>
                 {getData()}
