@@ -3,12 +3,9 @@ import Date from "./Date";
 // import TypeOfLeave from './TypeOfLeave'
 import "../styles/ApplyLeave.css";
 import DatePicker from "react-date-picker";
-<<<<<<< HEAD
 import { connect } from 'react-redux'
 
-=======
 import emailNotify from '../handlers/emailNotify'
->>>>>>> 133e3e42903717d801369deb29c72b1fb2dd31ec
 
 class ApplyLeave extends Component {
   constructor(props) {

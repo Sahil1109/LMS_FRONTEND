@@ -66,7 +66,7 @@ const rootReducer = (state = initialState, action) => {
             let currLeaves = state.leaves
 
             for(let index in state.leaves) {
-                if(state.leaves[index].available < action.data.days) {
+                if(state.leaves[index].type === action.data.type && state.leaves[index].available < action.data.days) {
                     return state;
                 }
             }
