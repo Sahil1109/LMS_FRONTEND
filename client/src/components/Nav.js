@@ -1,6 +1,6 @@
 import React from 'react'
 import '../styles/nav.css'
-function Nav() {
+function Nav(props) {
     return (
         <div id="nav">
             <div id="ham">
@@ -9,7 +9,7 @@ function Nav() {
             <div id="notep">
                 <img src={require('../icons/notepad.png')} id="note_img" alt="User"></img> <span>LMS | EMPLOYEE</span>
             </div>
-            <div id="log">
+            <div onClick={() => props.setAuthentication(false)} id="log">
                 <img src={require('../icons/userb.png')} id="user_img" alt="User"></img> <span id="sep">|</span> <a href="#"><img src={require('../icons/logout.png')} id="logout_img" alt="User"></img></a> 
             </div>
         </div>

@@ -29,7 +29,7 @@ function App(props) {
       
       
       <div id="top">
-      <Nav></Nav>
+      <Nav setAuthentication={setAuthentication}></Nav>
       </div>
 
       
