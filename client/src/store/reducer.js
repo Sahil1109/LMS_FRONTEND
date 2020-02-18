@@ -13,27 +13,6 @@ const initialState = {
       date: "14 Feb 2020",
       days: 2,
       status: "rejected"
-    },
-    {
-      id: 3,
-      type: "Paid",
-      date: "14 Feb 2020",
-      days: 3,
-      status: "approved"
-    },
-    {
-      id: 4,
-      type: "Paid",
-      date: "14 Feb 2020",
-      days: 3,
-      status: "approved"
-    },
-    {
-      id: 5,
-      type: "Paid",
-      date: "14 Feb 2020",
-      days: 3,
-      status: "approved"
     }
   ],
   leaves: [
