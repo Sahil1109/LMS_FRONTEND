@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 
 import Nav from './components/Nav'
 import Sidebar from './components/SideBar'
@@ -15,11 +15,14 @@ import {
 
 import EmpDashboard from './components/EmpDashboard'
 import ApplyLeave from './components/ApplyLeave'
+import Login from './components/Login'
 
 import './App.css';
 
 function App(props) {
+  const [isAuthenticated, setAuthentication] = useState(false)
   return (
+    (isAuthenticated) ?
     <Router>
     <div className="App" id="app">
       {/* this will contain only our navbar */}
@@ -51,7 +54,7 @@ function App(props) {
      
      
     </div>
-    </Router>
+    </Router> : <Login setAuthentication={setAuthentication} />
   );
 }
 const mapDispatchToProps = dispatch => {
