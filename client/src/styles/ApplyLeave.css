@@ -35,12 +35,12 @@ label{
 span{
   /* border:1px solid red; */
 }
-.reason , .uploadDoc , .TypeOfLeave{
+.reason , .uploadDoc , .TypeOfLeave , #noDays,#dateP{
   display: grid;
   grid-template-columns: 30fr 70fr;
 }
 
-.reason input,.TypeOfLeave select {
+.reason input,.TypeOfLeave select  , #noDays input{
   box-sizing: border-box;
   padding:0.3rem;
   width:40vw;
