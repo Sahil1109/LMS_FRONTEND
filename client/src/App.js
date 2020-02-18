@@ -24,7 +24,7 @@ function App(props) {
   const [isAuthenticated, setAuthentication] = useState(false)
   return (
     (isAuthenticated) ?
-    <Router>
+    <Router basename={`${process.env.PUBLIC_URL}/`}>
     <div className="App" id="app">
       
       
