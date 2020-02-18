@@ -35,19 +35,24 @@ label{
 span{
   /* border:1px solid red; */
 }
-.reason , .uploadDoc , .TypeOfLeave , #noDays,#dateP{
+.reason , .uploadDoc , .TypeOfLeave , #noDays{
   display: grid;
   grid-template-columns: 30fr 70fr;
 }
 
+#dateP{
+  display:grid;
+  grid-template-columns: 17fr 20fr 20fr;
+}
+
 .reason input,.TypeOfLeave select  , #noDays input{
   box-sizing: border-box;
-  padding:0.3rem;
+  padding:0.5rem;
   width:40vw;
-  height:6vh;
+  height:7vh;
   border-radius:3px;
-  border:none;
-  box-shadow: 2px 2px 4px black;
+  border:1px solid black;
+  /* box-shadow: 2px 2px 4px black; */
   font-size: 1.2rem;
 }
 
@@ -58,13 +63,13 @@ span#warning{
 .apply button{
   box-sizing: border-box;
   padding:0.7rem;
-  width:40vw;
+  width:20vw;
   font-size: 1rem;
   border-radius:3px;
   border:none;
   box-shadow: 2px 2px 4px black;
   background: #05b7e8;
-  margin-left:15vw;
+  margin-left:25vw;
   color:white;
   transition: box-shadow 500ms;
   cursor:pointer;
@@ -78,6 +83,13 @@ span#warning{
   padding:0.7rem;
   font-size:0.8rem;
   font-weight: bold;
+}
+
+#addButton{
+  padding:0.6rem;
+  border:1px solid black;
+  width:7vw;
+  height:6vh;
 }
 /* .uploadDocButton::-webkit-file-upload-button {
   visibility: hidden;

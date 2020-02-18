@@ -24,6 +24,7 @@ form{
     /* border:1px solid black; */
     box-shadow: 2px 2px 4px black;
     background: rgb(242, 248, 250);
+    text-align: center;
 
 }
 
@@ -86,5 +87,5 @@ span{
 }
 
 #logo_img{
-    width:5vw;
+    width:7vw;
 }

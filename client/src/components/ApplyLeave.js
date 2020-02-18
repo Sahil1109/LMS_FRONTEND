@@ -65,6 +65,7 @@ class ApplyLeave extends Component {
           <div id="dateP">
             <label>Choose a date</label>
             <DatePicker onChange={this.onDateChange} value={this.state.date} />
+            <button disabled type="button" id="addButton">Add</button>
           </div>
 
           <div id="noDays">
@@ -75,6 +76,7 @@ class ApplyLeave extends Component {
               onChange={this.handleNoOfDaysChange}
               min={1}
             ></input>
+            
           </div>
 
          
@@ -118,7 +120,7 @@ class ApplyLeave extends Component {
             <span id="warning">
               Note:Attaching document is compulsory if applied for
               <br />
-              two sick leaves.
+              more than 2 days sick leaves.
             </span>
           </div>
 

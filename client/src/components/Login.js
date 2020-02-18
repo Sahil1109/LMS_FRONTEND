@@ -59,7 +59,7 @@ function Login(props){
       <div id="loginBoard">
           <div id="header">
           
-          <img src={require('../icons/block8.png')} id="logo_img" alt="User"></img>
+          <img src={require('../icons/block8.png')} id="logo_img" alt="User"></img><br/>
           <h4>&nbsp;&nbsp;LMS | LOGIN</h4>
           </div>
           <form onSubmit = {handleSubmit}  >
