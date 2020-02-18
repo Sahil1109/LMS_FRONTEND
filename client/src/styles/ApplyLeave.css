@@ -1,82 +1,92 @@
-.applyLeave{
-    box-sizing: border-box;
+.applyLeave {
+  box-sizing: border-box;
 
-    /* margin-top: 100px; */
-    /* margin-left:1vw; */
-    height:89vh;
-    padding:1rem;
-    background: #ffffff;
-    /* box-shadow: 2px 2px 2px 2px; */
-    border:1px solid black;
-    border-radius: 5px;
-    margin-right: 20px;
-    padding-left: 20px;
-    
+  /* margin-top: 100px; */
+  /* margin-left:1vw; */
+  height: 89vh;
+  padding: 1rem;
+  background: #ffffff;
+  /* box-shadow: 2px 2px 2px 2px; */
+  border: 1px solid black;
+  border-radius: 5px;
+  margin-right: 20px;
+  padding-left: 20px;
 }
-.applyLeave form div{
+.applyLeave form div {
   box-sizing: border-box;
   /* border:1px solid black; */
-  padding:0.7rem;
-  
+  padding: 0.7rem;
 }
 
-form{
-  display:grid;
-  grid-template-rows:1fr 1fr 1fr 1fr 1fr;
+form {
+  display: grid;
+  grid-template-rows: 1fr 1fr 1fr 1fr 1fr;
 }
 
-label , input , select , span{
-  display:inline-block;
-  
+label,
+input,
+select,
+span {
+  display: inline-block;
 }
-label{
+label {
   font-weight: bold;
 }
-span{
+span {
   /* border:1px solid red; */
 }
-.reason , .uploadDoc , .TypeOfLeave , #noDays,#dateP{
+.reason,
+.uploadDoc,
+.TypeOfLeave,
+#noDays {
   display: grid;
   grid-template-columns: 30fr 70fr;
 }
 
-.reason input,.TypeOfLeave select  , #noDays input{
+#dateP {
+  display: grid;
+  grid-template-columns: 18fr 10fr 10fr 10fr 10fr;
+}
+
+.reason input,
+.TypeOfLeave select,
+#noDays input {
   box-sizing: border-box;
-  padding:0.3rem;
-  width:40vw;
-  height:6vh;
-  border-radius:3px;
-  border:none;
+  padding: 0.3rem;
+  width: 40vw;
+  height: 6vh;
+  border-radius: 3px;
+  border: none;
   box-shadow: 2px 2px 4px black;
   font-size: 1.2rem;
 }
 
-span#warning{
+span#warning {
   font-size: 0.9rem;
-  color:red;
+  color: red;
 }
-.apply button{
+.apply button {
   box-sizing: border-box;
-  padding:0.7rem;
-  width:40vw;
+  padding: 0.7rem;
+  width: 20vw;
   font-size: 1rem;
-  border-radius:3px;
-  border:none;
+  border-radius: 3px;
+  border: none;
   box-shadow: 2px 2px 4px black;
   background: #05b7e8;
-  margin-left:15vw;
-  color:white;
+  margin-left: 25vw;
+  color: white;
   transition: box-shadow 500ms;
-  cursor:pointer;
+  cursor: pointer;
 }
 
-.apply button:hover{
+.apply button:hover {
   box-shadow: 4px 4px 8px black;
 }
 
-#sl{
-  padding:0.7rem;
-  font-size:0.8rem;
+#sl {
+  padding: 0.7rem;
+  font-size: 0.8rem;
   font-weight: bold;
 }
 /* .uploadDocButton::-webkit-file-upload-button {
@@ -100,4 +110,3 @@ span#warning{
   font-weight: 700;
   font-size: 10pt;
 } */
-
