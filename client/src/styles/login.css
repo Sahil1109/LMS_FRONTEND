@@ -1,0 +1,89 @@
+#loginBoard{
+    box-sizing: border-box;
+
+    width:30vw;
+    height:50vh;
+    margin-left:35vw;
+    margin-top:25vh;
+    /* padding:0.7rem; */
+    /* border:1px solid black; */
+    box-shadow: 2px 2px 4px black;
+    /* display:grid;
+    grid-template-rows: 5vh 15vh 15vh 15vh; */
+}
+#loginBoard div{
+    padding:0.6rem;
+}
+
+
+form{
+    display: block;
+}
+
+#header{
+    /* border:1px solid black; */
+    box-shadow: 2px 2px 4px black;
+    background: rgb(242, 248, 250);
+
+}
+
+img{
+    display:inline-block;
+}
+
+h4{
+    display:inline-block;
+    font-size: 0.8rem;
+    color:rgb(88, 87, 87);
+}
+
+.groupfield{
+    /* border:1px solid black; */
+    height:8vh;
+    text-align: center;
+}
+
+.groupfield input{
+    box-sizing: border-box;
+  padding:0.5rem;
+  width:80%;
+  /* height:6vh; */
+  border-radius:3px;
+  border:none;
+  box-shadow: 2px 2px 4px black;
+  font-size: 0.8rem;
+}
+#buttonA input, #buttonA a{
+    margin-left:3vw;
+    font-size:0.8rem;
+    color:#05b7e8;
+    
+}
+
+span{
+    font-size:0.8rem;
+    color:#474747;
+}
+
+button{
+    box-sizing: border-box;
+    padding:0.5rem;
+    width:60%;
+    margin-left:20%;
+    /* height:6vh; */
+    border-radius:3px;
+    border:none;
+    box-shadow: 2px 2px 4px black;
+    font-size: 0.8rem;
+    color:white;
+    background:#05b7e8;
+    transition: box-shadow 500ms;
+}
+
+button:hover{
+    box-shadow: 4px 4px 10px black;
+}
+
+#logo_img{
+    width:5vw;
+}

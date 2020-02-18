@@ -3,6 +3,7 @@ import React, { useState } from 'react';
 import Nav from './components/Nav'
 import Sidebar from './components/SideBar'
 
+
 import LeaveTable from './components/LeaveTable'
 import LeaveList from './components/LeaveList'
 import { connect } from 'react-redux'
@@ -25,16 +26,17 @@ function App(props) {
     (isAuthenticated) ?
     <Router>
     <div className="App" id="app">
-      {/* this will contain only our navbar */}
+      
+      
       <div id="top">
       <Nav></Nav>
       </div>
 
       
       <div id="main">
-      {/* this will also stay same in every dashboard except the botton component will change */}
+   
       <Sidebar></Sidebar>
-      {/* your application div should be placed inside a div like this */}
+     
 
           <div>
             <Switch>
@@ -49,7 +51,7 @@ function App(props) {
 
       <button onClick={props.addLeave}>Add Leave</button>
 
-      </div>
+      </div> 
       
      
      
