@@ -1,10 +1,10 @@
 #table table{
     /* border:1px solid black; */
-    box-shadow: 2px 2px 3px black;
+    box-shadow: 3px 3px 8px black;
     border-radius: 5px;
     display: block;
     width:60vw;
-    margin-left:7vw;
+    /* margin-left:7vw; */
     height: 40vh;
     overflow-y: scroll;
 }

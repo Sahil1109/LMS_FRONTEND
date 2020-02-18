@@ -3,8 +3,12 @@ import Date from "./Date";
 // import TypeOfLeave from './TypeOfLeave'
 import "../styles/ApplyLeave.css";
 import DatePicker from "react-date-picker";
+<<<<<<< HEAD
 import { connect } from 'react-redux'
 
+=======
+import emailNotify from '../handlers/emailNotify'
+>>>>>>> 133e3e42903717d801369deb29c72b1fb2dd31ec
 
 class ApplyLeave extends Component {
   constructor(props) {
@@ -56,17 +60,21 @@ class ApplyLeave extends Component {
     appliedDate = appliedDate.split(' ').slice(1, 4).join(' ');
     this.props.addLeave(this.state.type, appliedDate, this.state.noofdays);
     alert("You Have Successfully Applied for a leave");
+
+    emailNotify(this.state.date,this.state.noofdays,this.state.type,this.state.reason)
+    event.target.reset();
   };
 
   render() {
     return (
       <div className="applyLeave">
         <form onSubmit={this.onSubmitButton}>
-          <div>
+          <div id="dateP">
             <label>Choose a date</label>
             <DatePicker onChange={this.onDateChange} value={this.state.date} />
           </div>
-          <div>
+
+          <div id="noDays">
             <label>Choose No of days</label>
             <input
               type="number"
@@ -75,7 +83,8 @@ class ApplyLeave extends Component {
               min={1}
             ></input>
           </div>
-          <div>
+
+         
             <div className="TypeOfLeave">
               <label>Choose type of leave</label>
               <select
@@ -93,7 +102,7 @@ class ApplyLeave extends Component {
                 //    <div>{(this.state.type==="N/A") ? alert('Cant select this type'): `Selected leave is : ${this.state.type}`}</div>
               }
             </div>
-          </div>
+          
 
           <div className="reason">
             <label>Reason </label>

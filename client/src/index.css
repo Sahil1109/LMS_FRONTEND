@@ -3,3 +3,7 @@
   margin:0;
   font-family:Roboto;
 }
+
+body{
+  overflow-x: hidden;
+}
