@@ -11,6 +11,11 @@ div#log , div#ham , div#notep{
     box-sizing: border-box;
     padding:10px;
 }
+
+div#ham{
+    padding:15px;
+    font-weight: bold;
+}
 div#notep{
     
     text-align: left;
