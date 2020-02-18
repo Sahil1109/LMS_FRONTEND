@@ -43,7 +43,7 @@ class ApplyLeave extends Component {
     
     render() {
         return (
-            <div className="applyLeave">
+            <div className="applyLeave"> 
             <form onSubmit={this.onSubmitButton}>
             <Date></Date>
             <div>
@@ -64,23 +64,20 @@ class ApplyLeave extends Component {
             </div>
 
             <div className="reason">
-            <label>Reason </label> <span> <input type ="text" value={this.state.reason}
-            onChange={this.handleReasonChange}></input></span>
+                <label>Reason </label>  
+                <input type ="text" value={this.state.reason} onChange={this.handleReasonChange}></input>
             </div>
 
             <div className="uploadDoc">
             
-            <input type="file" name="file" className="uploadDocButton"
-            onChange={(e)=>{
-                this.handleFile(e)
-            }} 
-            ></input> 
-            {/* <button >Upload</button> */}
-
-             {/* <span> 
-                Note: Attaching he proof is necessary if applying for more than 2 days leave
-                </span> */}
-                
+                <input type="file" name="file" className="uploadDocButton"
+                onChange={(e)=>{
+                    this.handleFile(e)
+                }} 
+                ></input> 
+                <span id="warning">Note:Attaching document is compulsory if applied for<br/>
+                two sick leaves.</span>
+            
             </div>
 
             <div className="apply">

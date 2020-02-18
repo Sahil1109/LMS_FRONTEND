@@ -2,13 +2,17 @@ import React, { useState } from 'react';
 
 import Nav from './components/Nav'
 import Sidebar from './components/SideBar'
+
+import LeaveTable from './components/LeaveTable'
+import LeaveList from './components/LeaveList'
+import { connect } from 'react-redux'
+
 import {
   BrowserRouter as Router,
   Switch,
   Route
 } from "react-router-dom";
 
-import { connect } from 'react-redux'
 import EmpDashboard from './components/EmpDashboard'
 import ApplyLeave from './components/ApplyLeave'
 import Login from './components/Login'
