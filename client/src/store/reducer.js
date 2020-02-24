@@ -18,31 +18,31 @@ const initialState = {
   leaves: [
     {
       type: "Sick",
-      available: 7,
-      taken: 2,
+      available: 8,
+      taken: 1,
       total: 9
     },
     {
       type: "Casual",
-      available: 7,
-      taken: 3,
+      available: 10,
+      taken: 0,
       total: 10
     },
     {
       type: "Paid",
-      available: 14,
-      taken: 1,
+      available: 15,
+      taken: 0,
       total: 15
     }
   ]
 };
 
 const rootReducer = (state = initialState, action) => {
-    console.log(state.data)
-    switch(action.type) {
-        case 'ADD_LEAVE_REQUEST':
-            let currData = state.data
-            let currLeaves = state.leaves
+  console.log(state.data);
+  switch (action.type) {
+    case "ADD_LEAVE_REQUEST":
+      let currData = state.data;
+      let currLeaves = state.leaves;
 
       for (let index in state.leaves) {
         if (

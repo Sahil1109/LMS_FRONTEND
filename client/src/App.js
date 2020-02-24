@@ -1,42 +1,30 @@
-import React, { useState } from 'react';
+import React, { useState } from "react";
+import Nav from "./components/Nav";
+import Sidebar from "./components/SideBar";
 
-import Nav from './components/Nav'
-import Sidebar from './components/SideBar'
+import LeaveTable from "./components/LeaveTable";
+import LeaveList from "./components/LeaveList";
+import { connect } from "react-redux";
 
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 
-import LeaveTable from './components/LeaveTable'
-import LeaveList from './components/LeaveList'
-import { connect } from 'react-redux'
+import EmpDashboard from "./components/EmpDashboard";
+import ApplyLeave from "./components/ApplyLeave";
+import Login from "./components/Login";
 
-import {
-  BrowserRouter as Router,
-  Switch,
-  Route
-} from "react-router-dom";
-
-import EmpDashboard from './components/EmpDashboard'
-import ApplyLeave from './components/ApplyLeave'
-import Login from './components/Login'
-
-import './App.css';
+import "./App.css";
 
 function App(props) {
-  const [isAuthenticated, setAuthentication] = useState(false)
-  return (
-    (isAuthenticated) ?
+  const [isAuthenticated, setAuthentication] = useState(false);
+  return isAuthenticated ? (
     <Router basename={`${process.env.PUBLIC_URL}/`}>
-    <div className="App" id="app">
-      
-      
-      <div id="top">
-      <Nav setAuthentication={setAuthentication}></Nav>
-      </div>
+      <div className="App" id="app">
+        <div id="top">
+          <Nav setAuthentication={setAuthentication}></Nav>
+        </div>
 
-      
-      <div id="main">
-   
-      <Sidebar></Sidebar>
-     
+        <div id="main">
+          <Sidebar></Sidebar>
 
           <div>
             <Switch>
@@ -49,29 +37,28 @@ function App(props) {
             </Switch>
           </div>
 
-      <button onClick={props.addLeave}>Add Leave</button>
-
-      </div> 
-      
-     
-     
-    </div>
-    </Router> : <Login setAuthentication={setAuthentication} />
+          <button onClick={props.addLeave}>Add Leave</button>
+        </div>
+      </div>
+    </Router>
+  ) : (
+    <Login setAuthentication={setAuthentication} />
   );
 }
 const mapDispatchToProps = dispatch => {
   return {
-    addLeave: () => dispatch({
-      type: 'ADD_LEAVE_REQUEST',
-      data: {
-        id: 5,
-        type: 'Casual',
-        date: '14 Feb 2020',
-        days: 3,
-        status: 'pending'
-      },
-    }),
-  }
-}
+    addLeave: () =>
+      dispatch({
+        type: "ADD_LEAVE_REQUEST",
+        data: {
+          id: 5,
+          type: "Casual",
+          date: "14 Feb 2020",
+          days: 3,
+          status: "pending"
+        }
+      })
+  };
+};
 
 export default connect(null, mapDispatchToProps)(App);

@@ -1,0 +1,19 @@
+{
+  "name": "lms",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "precommit": "cd client && npm run precommit"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/AkshayBlock8/LMS.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/AkshayBlock8/LMS/issues"
+  },
+  "homepage": "https://github.com/AkshayBlock8/LMS#readme"
+}
