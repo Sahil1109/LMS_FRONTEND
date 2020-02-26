@@ -1,7 +1,11 @@
 import React from 'react'
-import '../styles/empdashboard.css'
-import LeaveTable from './LeaveTable'
-import LeaveList from './LeaveList'
+//importing components
+import LeaveTable from '../../components/LeaveTable/LeaveTable'
+import LeaveList from '../../components/LeaveList/LeaveList'
+//importing css files
+import './empdashboard.css'
+
+
 
 function EmpDashboard() {
     return (

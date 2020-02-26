@@ -1,8 +1,10 @@
 import React from "react";
-import "../styles/side.css";
+import "./side.css";
 import { useHistory } from "react-router-dom";
 
 function SideBar() {
+
+  //Using routing to link logout button and apply leave button
   const history = useHistory();
 
   const loadDashboard = () => {
@@ -21,7 +23,7 @@ function SideBar() {
       <button type="button" onClick={loadApplyLeave} key="3" id="apply">
         Apply For Leave{" "}
         <img
-          src={require("../icons/arrowb.png")}
+          src={require("../../icons/arrowb.png")}
           id="user_img"
           alt="User"
         ></img>

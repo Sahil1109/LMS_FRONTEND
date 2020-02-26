@@ -10,7 +10,7 @@ function LeaveEntry(props) {
             <td>{props.entry.date}</td>
             <td>{props.entry.days}</td>
             <td >{props.entry.status}</td>
-            <td><img src={require('../icons/pen.png')} id="pen_img" alt="User"></img></td>
+            <td><img src={require('../../icons/pen.png')} id="pen_img" alt="User"></img></td>
         </tr>
     )
 }

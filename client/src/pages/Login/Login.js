@@ -1,12 +1,6 @@
 import React, {useState} from "react";
-//import "./login.css"
-import '../styles/login.css'
+import './login.css'
 
-
-//import Checkbox from "./Checkbox"
-
-
-//import {Button,FormControl,FormGroup,FormLabel} from "react-bootstrap";
 
 function Login(props){
 
@@ -59,7 +53,7 @@ function Login(props){
       <div id="loginBoard">
           <div id="header">
           
-          <img src={require('../icons/block8.png')} id="logo_img" alt="User"></img><br/>
+          <img src={require('../../icons/block8.png')} id="logo_img" alt="User"></img><br/>
           <h4>&nbsp;&nbsp;LMS | LOGIN</h4>
           </div>
           <form onSubmit = {handleSubmit}  >

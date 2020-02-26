@@ -1,7 +1,7 @@
 import React from 'react'
 import LeaveEntry from './LeaveEntry'
 import { connect } from 'react-redux'
-import '../styles/LeaveTable.css'
+import './LeaveTable.css'
 
 function LeaveTable(props) {
 

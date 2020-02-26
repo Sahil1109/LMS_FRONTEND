@@ -1,14 +1,17 @@
 import React from 'react'
 import LeaveListEntry from './LeaveListEntry'
 import { connect } from 'react-redux'
-import '../styles/leaveList.css'
+import './leaveList.css'
 
 function LeaveList(props) {
+
     const getData=()=>{
         return (props.leaves.map((leave, index)=>{
             return <LeaveListEntry key={index} leave={leave}></LeaveListEntry>
         }))
     }
+
+
     return (
         <div id="leavelist">
             <table>
