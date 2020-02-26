@@ -4,6 +4,7 @@ import "./nav.css";
 function Nav(props) {
   return (
     <div id="nav">
+      
       <div id="ham">
         <img
           src={require("../../icons/block8.png")}
@@ -11,9 +12,11 @@ function Nav(props) {
           alt="User"
         ></img>
       </div>
+
       <div id="notep">
         <span>LMS | EMPLOYEE</span>
       </div>
+
       <div onClick={() => props.setAuthentication(false)} id="log">
         <img
           src={require("../../icons/userb.png")}
@@ -29,6 +32,7 @@ function Nav(props) {
           ></img>
         </a>
       </div>
+
     </div>
   );
 }

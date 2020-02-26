@@ -5,7 +5,7 @@ import { useHistory } from "react-router-dom";
 function SideBar() {
 
   //fake data
-  const role='adm'
+  const role='admin'
 
   //Using routing to link logout button and apply leave button
   const history = useHistory();
