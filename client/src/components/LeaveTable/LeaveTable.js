@@ -3,6 +3,7 @@ import LeaveEntry from "./LeaveEntry";
 import { connect } from "react-redux";
 import "./LeaveTable.css";
 
+
 function LeaveTable(props) {
   const getRows = () => {
     return props.data.map(entry => {
@@ -10,12 +11,14 @@ function LeaveTable(props) {
     });
   };
 
+
   return (
     <div id="table">
       <table>
         <tr id="thr">
           <th>Leave Type</th>
-          <th>Date</th>
+          <th>From</th>
+          <th>To</th>
           <th>Days</th>
           <th>Status</th>
           <th>Edit</th>

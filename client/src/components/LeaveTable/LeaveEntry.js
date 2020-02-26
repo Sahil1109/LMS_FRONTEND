@@ -15,6 +15,7 @@ function LeaveEntry(props) {
     <tr style={style}>
       <td>{props.entry.type}</td>
       <td>{props.entry.date}</td>
+      <td>{props.entry.date}</td>
       <td>{props.entry.days}</td>
       <td>{props.entry.status}</td>
       <td>

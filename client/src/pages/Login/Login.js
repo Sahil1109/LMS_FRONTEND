@@ -26,8 +26,11 @@ function Login(props) {
   function buttonClick(event) {
     event.preventDefault();
     if (password === staticPassword && email === staticEmail) {
-      console.log("Working");
+     
+
+      //this is where api will get hit
       props.setAuthentication(true);
+
     } else {
       console.log("not working");
       alert("enter correct details");
