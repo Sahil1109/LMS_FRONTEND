@@ -1,20 +1,17 @@
-import React from 'react'
+import React from "react";
 //importing components
-import LeaveTable from '../../components/LeaveTable/LeaveTable'
-import LeaveList from '../../components/LeaveList/LeaveList'
+import LeaveTable from "../../components/LeaveTable/LeaveTable";
+import LeaveList from "../../components/LeaveList/LeaveList";
 //importing css files
-import './empdashboard.css'
-
-
+import "./empdashboard.css";
 
 function EmpDashboard() {
-    return (
-        <div id="empd">
-            <LeaveList></LeaveList>
-            <LeaveTable></LeaveTable>
-            
-        </div>
-    )
+  return (
+    <div id="empd">
+      <LeaveList></LeaveList>
+      <LeaveTable></LeaveTable>
+    </div>
+  );
 }
 
-export default EmpDashboard
+export default EmpDashboard;

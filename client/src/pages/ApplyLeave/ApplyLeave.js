@@ -19,7 +19,6 @@ class ApplyLeave extends Component {
       type: ""
     };
   }
-
   handleEndLeaveChange = event => {
     this.setState({
       endleavetype: event.target.value
@@ -34,7 +33,6 @@ class ApplyLeave extends Component {
   onStartDateChange = startdate => this.setState({ startdate });
   onEndDateChange = enddate => this.setState({ enddate });
 
-  
   handleFile(e) {
     let file = e.target.files[0];
 
@@ -56,22 +54,19 @@ class ApplyLeave extends Component {
   onSubmitButton = event => {
     event.preventDefault();
     if (this.state.type !== "N/A") {
-    
       let startDate = this.state.startdate.toUTCString();
-      
+
       let day = this.state.startdate.getDate();
-      
+
       console.log(startDate);
       startDate = startDate
         .split(" ")
         .slice(2, 4)
         .join(" ");
       startDate = day + " " + startDate;
-     
+
       console.log(startDate);
       this.props.addLeave(this.state.type, startDate, 1);
-
-      
 
       alert("You Have Successfully Applied for a leave");
 
@@ -103,7 +98,6 @@ class ApplyLeave extends Component {
               onChange={this.handleEndLeaveChange}
               className="typeOfLeaveDropdown"
             >
-            
               <option value="full">Full Day</option>
               <option value="half">Half Day</option>
             </select>
@@ -133,8 +127,6 @@ class ApplyLeave extends Component {
               onChange={this.handleReasonChange}
             ></input>
           </div>
-
-          
 
           <div className="apply">
             <button type="submit" className="applyButton">
