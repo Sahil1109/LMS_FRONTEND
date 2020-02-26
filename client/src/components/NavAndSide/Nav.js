@@ -17,7 +17,7 @@ function Nav(props) {
         <span>LMS | EMPLOYEE</span>
       </div>
 
-      <div onClick={() => props.setAuthentication(false)} id="log">
+      <div id="log" onClick={() => props.setAuthentication(false)} >
         <img
           src={require("../../icons/userb.png")}
           id="user_img"

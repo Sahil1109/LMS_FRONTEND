@@ -1,14 +1,17 @@
 import React from "react";
 import "./side.css";
-import { useHistory } from "react-router-dom";
+import { useHistory , useLocation } from "react-router-dom";
 
 function SideBar() {
 
   //fake data
   const role='admin'
+  let location=useLocation()
+  console.log(location)
 
   //Using routing to link logout button and apply leave button
   const history = useHistory();
+  
 
 
   const loadAnotherPage=(page)=>{
@@ -26,13 +29,18 @@ function SideBar() {
   }
 
   return (
-    <div id="sidebar">
+    <div id="sidebar" >
 
-      <button type="button" onClick={()=>{loadAnotherPage('dashboard')}} id="dashb" key="2">
-        Dashboard
+      <button type="button" onClick={()=>{loadAnotherPage('dashboard')}} className={location.pathname==='/'?'selected':''} key="2">
+        Dashboard{" "}
+        <img
+          src={require("../../icons/arrowb.png")}
+          id="user_img"
+          alt="User"
+        ></img>
       </button>
 
-      <button type="button" onClick={()=>{loadAnotherPage('applyLeave')}} key="3" id="apply">
+      <button type="button" onClick={()=>{loadAnotherPage('applyLeave')}} key="3"  className={location.pathname==='/addLeave'?'selected':''}>
         Apply For Leave{" "}
         <img
           src={require("../../icons/arrowb.png")}
@@ -41,7 +49,7 @@ function SideBar() {
         ></img>
       </button>
 
-      <button type="button" onClick={()=>{loadAnotherPage('applyLeave')}} key="4" id="approval">
+      <button type="button"  onClick={()=>{loadAnotherPage('applyLeave')}} key="4" id="approval">
         Leave Approval{" "}
         <img
           src={require("../../icons/arrowb.png")}
@@ -53,13 +61,28 @@ function SideBar() {
       {
         role==='admin'?
         <button type="button" onClick={()=>{loadAnotherPage('applyLeave')}} key="5" >
-        Add Employee{" "}
+        Leave management{" "}
         <img
           src={require("../../icons/arrowb.png")}
           id="user_img"
           alt="User"
         ></img>
-        </button>:''
+        </button>
+        :''
+
+      }
+
+      {
+        role==='admin'?
+        <button type="button" onClick={()=>{loadAnotherPage('applyLeave')}} key="5" >
+        Employee{" "}
+        <img
+          src={require("../../icons/arrowb.png")}
+          id="user_img"
+          alt="User"
+        ></img>
+        </button>
+        :''
 
       }
 
