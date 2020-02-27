@@ -1,10 +1,12 @@
 import React, { useState, useEffect } from "react";
 import DatePicker from "react-date-picker";
 import {useFormState} from 'react-use-form-state'
+import {useHistory} from 'react-router-dom'
 import './AddLeave.css'
 
 function AddLeave() {
   let fileUpload
+  let history=useHistory()
   let [startDate, setStartDate] = useState(new Date());
   let [endDate, setEndDate] = useState(new Date());
   const [formState,{select,text}]=useFormState({
@@ -14,10 +16,9 @@ function AddLeave() {
 
 
   const getStringVal=(date)=>{
-    var months    = ['January','February','March','April','May','June','July',
-    'August','September','October','November','December'];
-    let stringVal=date.getFullYear().toString()+' '+
-                months[date.getMonth()]+' '+date.getDate().toString()
+    var months    = ['01','02','03','04','05','06','07','08','09','10','11','12'];
+    let stringVal=date.getFullYear().toString()+'-'+
+                months[date.getMonth()]+'-'+date.getDate().toString()
     return stringVal
 
   }
@@ -33,20 +34,21 @@ function AddLeave() {
       let leaveType=formState.values.leaveType
       let ss=startDate.getTime()/1000
       let es=endDate.getTime()/1000
-      let noOfDays=Math.ceil((es-ss) / (3600*24))+1
-      noOfDays=hf==='Half'?(noOfDays-0.5):noOfDays
+    //   let noOfDays=Math.ceil((es-ss) / (3600*24))+1
+    //   noOfDays=hf==='Half'?(noOfDays-0.5):noOfDays
       let desc=formState.values.description
 
       console.log(startDateS)
       console.log(endDateS)
       console.log(hf)
       console.log(leaveType)
-      console.log('noofdays',noOfDays)
       console.log('file:',fileUpload.files[0])
 
 
       //cleaning up
-      formState.values.description=' '
+      formState.clear()
+      setStartDate(new Date())
+      history.push('/')
       e.target.reset()
   }
 
@@ -56,7 +58,7 @@ function AddLeave() {
 
         <div className="field-group date-cont">
           <label>Leave dates</label>
-          <DatePicker className="datep" onChange={(date)=>{setStartDate(date);setEndDate(date)}} value={startDate} format='dd.MM.yy' minDate={new Date()} />
+          <DatePicker className="datep" onChange={(date)=>{setStartDate(date);setEndDate(date)}} value={startDate} format='dd.MM.yy'  />
           <DatePicker className="datep" onChange={(date)=>setEndDate(date)} value={endDate} format='dd.MM.yy' minDate={startDate} />
           <select {...select('hf')}>
             <option value="Half">Half</option>
@@ -74,7 +76,7 @@ function AddLeave() {
 
         <div className="field-group">
           <label>Leave Description</label>
-          <textarea {...text('description')}></textarea>
+          <textarea {...text('description')} required minLength="3"></textarea>
         </div>
 
         <div className="field-group">
