@@ -6,6 +6,7 @@ import "./login.css";
 function Login(props) {
   const staticEmail = "ravi@gmail.com";
   const staticPassword = "password1";
+  
   //getting context
   let [empid,setEmpid]=useContext(EmpIdContext)
   
@@ -17,7 +18,7 @@ function Login(props) {
     event.preventDefault();
     if (formState.values.passw === staticPassword &&formState.values.email === staticEmail) {
         //this is where api will get hit
-        props.setAuthentication(true);
+        
         setEmpid('007')
       }else{
         alert("enter correct details");
