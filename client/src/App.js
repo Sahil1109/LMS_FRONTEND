@@ -6,7 +6,7 @@ import Sidebar from "./components/NavAndSide/SideBar";
 import EmpDashboard from "./pages/EmpDashboard/EmpDashboard";
 import ApplyLeave from "./pages/ApplyLeave/ApplyLeave";
 import Login from "./pages/Login/Login";
-
+import AddLeave from './pages/AddLeave/AddLeave'
 //css file import
 import "./App.css";
 
@@ -36,7 +36,8 @@ function App(props) {
           <div>
             <Switch>
               <Route path="/addLeave">
-                <ApplyLeave />
+                {/* <ApplyLeave /> */}
+                <AddLeave></AddLeave>
               </Route>
               <Route path="/">
                 <EmpDashboard />
