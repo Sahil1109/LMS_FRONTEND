@@ -2,10 +2,11 @@ import React, { useState } from "react";
 //Fixed components
 import Nav from "./components/NavAndSide/Nav";
 import Sidebar from "./components/NavAndSide/SideBar";
-//Pages
+//Pages 
 import EmpDashboard from "./pages/EmpDashboard/EmpDashboard";
 import ApplyLeave from "./pages/ApplyLeave/ApplyLeave";
 import Login from "./pages/Login/Login";
+
 //css file import
 import "./App.css";
 
@@ -14,7 +15,12 @@ import { connect } from "react-redux";
 //Router import
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 
+
+
+
+
 function App(props) {
+
   const [isAuthenticated, setAuthentication] = useState(false);
 
   return isAuthenticated ? (
@@ -46,6 +52,8 @@ function App(props) {
     <Login setAuthentication={setAuthentication} />
   );
 }
+
+
 
 //dispatcher code
 const mapDispatchToProps = dispatch => {

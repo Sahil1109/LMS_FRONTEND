@@ -6,6 +6,7 @@ function SideBar() {
 
   //fake data
   const role='admin'
+  //getting location
   let location=useLocation()
   console.log(location)
 
