@@ -51,6 +51,7 @@ div.date-cont div{
     padding:0.6rem;
     border-radius:5px;
     font-size:1.2rem;
+    cursor: pointer;
 }
 
 select{
