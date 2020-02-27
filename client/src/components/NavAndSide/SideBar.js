@@ -75,7 +75,7 @@ function SideBar() {
 
       {
         role==='admin'?
-        <button type="button" onClick={()=>{loadAnotherPage('applyLeave')}} key="5" >
+        <button type="button" onClick={()=>{loadAnotherPage('applyLeave')}} key="6" >
         Employee{" "}
         <img
           src={require("../../icons/arrowb.png")}

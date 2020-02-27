@@ -13,6 +13,8 @@ import "./App.css";
 import { connect } from "react-redux";
 //Router import
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+//importing providers
+import {EmpIdProvider} from './contexts/EmpId/EmpIdContext'
 
 
 
@@ -24,28 +26,32 @@ function App(props) {
 
   return isAuthenticated ? (
     <Router basename={`${process.env.PUBLIC_URL}/`}>
-      <div className="App" id="app">
-        <div id="top">
-          <Nav setAuthentication={setAuthentication}></Nav>
-        </div>
-
-        <div id="main">
-          <Sidebar></Sidebar>
-
-          <div>
-            <Switch>
-              <Route path="/addLeave">
-                <AddLeave></AddLeave>
-              </Route>
-              <Route path="/">
-                <EmpDashboard />
-              </Route>
-            </Switch>
+      <EmpIdProvider>
+        <div className="App" id="app">
+          <div id="top">
+            <Nav setAuthentication={setAuthentication}></Nav>
           </div>
 
-          <button onClick={props.addLeave}>Add Leave</button>
+          <div id="main">
+            <Sidebar></Sidebar>
+
+            <div>
+              <Switch>
+                <Route path="/addLeave">
+                  <AddLeave></AddLeave>
+                </Route>
+                <Route path="/">
+                  <EmpDashboard />
+                </Route>
+              </Switch>
+            </div>
+
+            <button onClick={props.addLeave}>Add Leave</button>
+          </div>
         </div>
-      </div>
+
+      </EmpIdProvider>
+      
     </Router>
   ) : (
     <Login setAuthentication={setAuthentication} />
