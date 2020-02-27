@@ -35,8 +35,18 @@ function AddLeave() {
       let es=endDate.getTime()/1000
       let noOfDays=Math.ceil((es-ss) / (3600*24))+1
       noOfDays=hf==='Half'?(noOfDays-0.5):noOfDays
+      let desc=formState.values.description
+
+      console.log(startDateS)
+      console.log(endDateS)
+      console.log(hf)
+      console.log(leaveType)
       console.log('noofdays',noOfDays)
       console.log('file:',fileUpload.files[0])
+
+
+      //cleaning up
+      formState.values.description=' '
       e.target.reset()
   }
 

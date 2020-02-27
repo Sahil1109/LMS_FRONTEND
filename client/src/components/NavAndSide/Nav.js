@@ -14,7 +14,7 @@ function Nav(props) {
       </div>
 
       <div id="notep">
-        <span>LMS | EMPLOYEE</span>
+        <span>LMS | ADMIN</span>
       </div>
 
       <div id="log" onClick={() => props.setAuthentication(false)} >
