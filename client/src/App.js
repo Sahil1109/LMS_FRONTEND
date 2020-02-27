@@ -26,7 +26,7 @@ function App(props) {
 
   return isAuthenticated ? (
     <Router basename={`${process.env.PUBLIC_URL}/`}>
-      <EmpIdProvider>
+      
         <div className="App" id="app">
           <div id="top">
             <Nav setAuthentication={setAuthentication}></Nav>
@@ -50,11 +50,14 @@ function App(props) {
           </div>
         </div>
 
-      </EmpIdProvider>
+      
       
     </Router>
   ) : (
-    <Login setAuthentication={setAuthentication} />
+    <EmpIdProvider>
+      <Login setAuthentication={setAuthentication} />
+    </EmpIdProvider>
+    
   );
 }
 
