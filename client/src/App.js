@@ -54,9 +54,8 @@ function App(props) {
       
     </Router>
   ) : (
-    <EmpIdProvider>
       <Login setAuthentication={setAuthentication} />
-    </EmpIdProvider>
+  
     
   );
 }

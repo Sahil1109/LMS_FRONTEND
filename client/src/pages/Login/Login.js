@@ -6,8 +6,9 @@ import "./login.css";
 function Login(props) {
   const staticEmail = "ravi@gmail.com";
   const staticPassword = "password1";
+  //getting context
   let [empid,setEmpid]=useContext(EmpIdContext)
-  console.log('initial id:',empid)
+  
 
   //setting formState
   let [formState,{text,password,email}]=useFormState()
