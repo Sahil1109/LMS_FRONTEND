@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState,useContext } from "react";
 //Fixed components
 import Nav from "./components/NavAndSide/Nav";
 import Sidebar from "./components/NavAndSide/SideBar";
@@ -14,7 +14,7 @@ import { connect } from "react-redux";
 //Router import
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 //importing providers
-import {EmpIdProvider} from './contexts/EmpId/EmpIdContext'
+import {EmpIdContext} from './contexts/EmpId/EmpIdContext'
 
 
 
@@ -24,7 +24,10 @@ function App(props) {
 
   const [isAuthenticated, setAuthentication] = useState(false);
 
-  return isAuthenticated ? (
+  let [empid,setEmpid]=useContext(EmpIdContext)
+
+
+  return empid!=null ? (
     <Router basename={`${process.env.PUBLIC_URL}/`}>
       
         <div className="App" id="app">
