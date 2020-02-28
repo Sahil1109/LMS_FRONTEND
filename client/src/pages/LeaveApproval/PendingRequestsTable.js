@@ -10,6 +10,7 @@ function PendingRequests(props) {
       let [ahistory,setAhistory]=useContext(ApprovalHistoryContext)
 
       const onStatusChange=(_id,status)=>{
+        console.log('changing status:',_id)
         let newahistory=ahistory.map((entry)=>{
           entry.status=entry._id===_id?status:entry.status
           return entry
@@ -22,7 +23,7 @@ function PendingRequests(props) {
         return ahistory.map(entry => {
           
             if(entry.status==='pending'){
-              return (<PendingRequestEntry id={entry._id} entry={entry}></PendingRequestEntry>)
+              return (<PendingRequestEntry onStatusChange={onStatusChange} id={entry._id} entry={entry}></PendingRequestEntry>)
             }else{
               return
             }

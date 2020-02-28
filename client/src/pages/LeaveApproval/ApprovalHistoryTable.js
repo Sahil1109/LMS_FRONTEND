@@ -9,7 +9,7 @@ function ApprovalHistory() {
   let [ahistory,setAhistory]=useContext(ApprovalHistoryContext)
   const getRows = () => {
     return ahistory.map(entry => {
-      
+        console.log('checking enrty',entry)
         if(entry.status!=='pending'){
           return (<ApprovalHistoryEntry id={entry._id} entry={entry}></ApprovalHistoryEntry>)
         }else{
@@ -20,6 +20,7 @@ function ApprovalHistory() {
     });
   };
   return (
+    ahistory===undefined?null:
     <div>
       <h3 id="approvalHeading">APPROVAL HISTORY</h3>
       <div id="tableApproval">
@@ -32,6 +33,7 @@ function ApprovalHistory() {
             <th>No. of Days</th>
             <th>Status</th>
           </tr>
+          {getRows()}
         </table>
       </div>
     </div>
