@@ -1,4 +1,4 @@
-import React,{useContext}from "react";
+import React,{useContext,useEffect}from "react";
 //importing components
 import LeaveTable from "../../components/LeaveTable/LeaveTable";
 import LeaveList from "../../components/LeaveList/LeaveList";
@@ -22,13 +22,28 @@ function EmpDashboard() {
     axios.get(`http://10.9.8.150:5000/api/employee/${empid._id}`)
     .then((res)=>{
       console.log(res.data)
+      setEmpInfo(res.data)
     })
     .catch((err)=>{
       console.log('error while fetching emp info')
     })
   }
 
-  getEmpInfo()
+  const getHistory=()=>{
+    axios.get(`http://10.9.8.150:5000/api/leave/approver/${empid._id}/1234/`)
+    .then((res)=>{
+      console.log(res.data)
+    })
+    .catch((err)=>{
+      console.log('error while fetching emp history')
+    })
+  }
+
+  useEffect(()=>{
+    getEmpInfo()
+    getHistory()
+  },[])
+  
   return (
     <div id="empd">
       <LeaveList></LeaveList>
