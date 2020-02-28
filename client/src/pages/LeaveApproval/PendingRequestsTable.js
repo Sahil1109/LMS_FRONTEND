@@ -1,5 +1,6 @@
 import React,{useContext}from "react";
 import PendingRequestEntry from './PendingRequestEntry'
+import axios from 'axios'
 
 //getting context
 import {ApprovalHistoryContext} from '../../contexts/AprrovalHistory/ApprovalHistoryContext'
@@ -9,13 +10,21 @@ function PendingRequests(props) {
 
       let [ahistory,setAhistory]=useContext(ApprovalHistoryContext)
 
-      const onStatusChange=(_id,status)=>{
-        console.log('changing status:',_id)
-        let newahistory=ahistory.map((entry)=>{
-          entry.status=entry._id===_id?status:entry.status
-          return entry
+      const onStatusChange=(newentry,_id,status)=>{
+        newentry.status=status
+        console.log('new entry:',newentry)
+        axios.put('http://10.9.8.150:5000/api/leave',newentry).then((res)=>{
+          let newahistory=ahistory.map((entry)=>{
+            entry.status=entry._id===_id?status:entry.status
+            return entry
+          })
+          setAhistory(newahistory)
+
+        }).catch((err)=>{
+          console.log(err.response())
         })
-        setAhistory(newahistory)
+
+        
       }
 
      
