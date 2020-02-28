@@ -8,7 +8,6 @@ function SideBar() {
   const role='admin'
   //getting location
   let location=useLocation()
-  console.log(location)
 
   //Using routing to link logout button and apply leave button
   const history = useHistory();
