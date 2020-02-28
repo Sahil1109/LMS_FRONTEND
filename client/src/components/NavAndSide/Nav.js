@@ -16,7 +16,7 @@ function Nav(props) {
       </div>
 
       <div id="notep">
-        <span>LMS | ADMIN {empid}</span>
+        <span>LMS | ADMIN </span>
       </div>
 
       <div id="log">
@@ -24,7 +24,7 @@ function Nav(props) {
           src={require("../../icons/userb.png")}
           id="user_img"
           alt="User"
-        ></img>{" "+empid}
+        ></img>{" "+empid.name}
         
       </div>
 
