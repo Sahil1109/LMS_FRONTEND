@@ -1,7 +1,24 @@
-import React from "react";
+import React,{useContext}from "react";
 import "./ApprovalHistoryTable.css";
+import ApprovalHistoryEntry from './ApprovalHistoryEntry'
+
+//getting context
+import {ApprovalHistoryContext} from '../../contexts/AprrovalHistory/ApprovalHistoryContext'
 
 function ApprovalHistory() {
+  let [ahistory,setAhistory]=useContext(ApprovalHistoryContext)
+  const getRows = () => {
+    return ahistory.map(entry => {
+      
+        if(entry.status!=='pending'){
+          return (<ApprovalHistoryEntry id={entry._id} entry={entry}></ApprovalHistoryEntry>)
+        }else{
+          return
+        }
+        
+      
+    });
+  };
   return (
     <div>
       <h3 id="approvalHeading">APPROVAL HISTORY</h3>

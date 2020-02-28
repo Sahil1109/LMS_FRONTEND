@@ -17,10 +17,7 @@ function PendingRequestEntry(props) {
       <td>{getStringDate(props.entry.startDate)}</td>
       <td>{getStringDate(props.entry.endDate)}</td>
       <td>{props.entry.days}</td>
-      <td>{props.entry.status}</td>
-      <td>
-        
-      </td>
+      <td><button type="button">Accept</button> <button type="button">Reject</button></td>
     </tr>
   );
 }
