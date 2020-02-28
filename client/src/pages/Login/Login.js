@@ -5,10 +5,7 @@ import axios from 'axios'
 import "./login.css";
 
 function Login(props) {
-  const staticEmail = "ravi@gmail.com";
-  const staticPassword = "password1";
-
-  //getting context
+   //getting context
   let [empid, setEmpid] = useContext(EmpIdContext);
 
   //setting formState
