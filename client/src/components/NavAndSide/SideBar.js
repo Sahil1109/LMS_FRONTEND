@@ -25,6 +25,9 @@ function SideBar() {
       case 'applyLeave':
         history.push("/addLeave");
         break;
+      case 'leaveApproval':
+        history.push('/leaveApproval')
+        break;
       default:
         history.push("/");
         break;
@@ -52,7 +55,7 @@ function SideBar() {
         ></img>
       </button>
 
-      <button type="button"  onClick={()=>{loadAnotherPage('applyLeave')}} key="4" id="approval">
+      <button type="button"  onClick={()=>{loadAnotherPage('leaveApproval')}} key="4" id="approval">
         Leave Approval{" "}
         <img
           src={require("../../icons/arrowb.png")}

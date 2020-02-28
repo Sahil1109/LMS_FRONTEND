@@ -3,7 +3,7 @@
     box-shadow: 3px 3px 6px black;
     border-radius: 5px;
     display: block;
-    width:78vw;
+    width:60vw;
     
     height: 32vh;
     overflow-y: scroll;
@@ -13,7 +13,7 @@
 
 td , th{
     box-sizing: border-box;
-    width:10vw;
+    width:15vw;
     height: 7vh;
     padding:1rem;
     margin:0;
@@ -39,9 +39,4 @@ td , th{
 
 #thr{
     background: #d4d3d3;
-}
-
-#pen_img{
-    width:2vw;
-    cursor: pointer;
 }

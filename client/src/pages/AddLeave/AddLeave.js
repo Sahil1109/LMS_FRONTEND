@@ -66,7 +66,7 @@ function AddLeave() {
       startDate: startDateS,
       endDate: endDateS,
       leaveType: leaveType.toLowerCase(),
-      halfDay:" ",
+      halfDay:false,
       description: desc
     };
 

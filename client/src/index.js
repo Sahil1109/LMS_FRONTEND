@@ -8,11 +8,12 @@ import rootReducer from './store/reducer'
 import {EmpIdProvider} from './contexts/EmpId/EmpIdContext'
 import {EmployeeProvider} from './contexts/Emp/EmployeeContext'
 import {HistoryProvider} from './contexts/History/HistoryContext'
-const store = createStore(rootReducer)
+import {ApprovalHistoryProvider} from './contexts/AprrovalHistory/ApprovalHistoryContext'
+
 
 
 ReactDOM.render(
-    <Provider store={store}>
+    <ApprovalHistoryProvider>
         <EmpIdProvider>
             <EmployeeProvider>
                 <HistoryProvider>
@@ -20,5 +21,5 @@ ReactDOM.render(
                 </HistoryProvider>
             </EmployeeProvider>
         </EmpIdProvider>
-    </Provider>, document.getElementById('root'));
+    </ApprovalHistoryProvider>, document.getElementById('root'));
 
