@@ -16,7 +16,7 @@ function Nav(props) {
       </div>
 
       <div id="notep">
-        <span>LMS | ADMIN </span>
+        <span>LMS | {empid.role.toUpperCase()} </span>
       </div>
 
       <div id="log">
