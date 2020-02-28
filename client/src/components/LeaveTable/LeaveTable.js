@@ -9,10 +9,25 @@ import "./LeaveTable.css";
 function LeaveTable(props) {
 
   let [history,setHistory]=useContext(HistoryContext)
-  
+
+  const getLeaveDuration=(start, end)=>{
+    let startDate = new Date(start)
+    let endDate = new Date(end)
+    let count = 0;
+    for(var d = startDate; d <= endDate; d.setDate(d.getDate() + 1)) {
+        let day = d.getDay()
+        if(day == 0 || day == 6) {
+            continue;
+        }
+        count++;
+    }
+    return count;
+}
 
   const getRows = () => {
-    return props.data.map(entry => {
+    return history.map(entry => {
+      console.log('converted date:',new Date(entry.startDate).getDate())
+      entry.nodays=getLeaveDuration(entry.startDate,entry.endDate)
       return <LeaveEntry id={entry.id} entry={entry}></LeaveEntry>;
     });
   };

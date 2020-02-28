@@ -12,9 +12,7 @@ function LeaveList(props) {
   // console.log('employee sick available:',empInfo.available._id)
 
   const getData = () => {
-    console.log("empInfo..............................",empInfo)
     
-    console.log(empInfo.available.sick)
     return props.leaves.map((leave, index) => {
       return <LeaveListEntry key={index} leave={leave}></LeaveListEntry>;
     });

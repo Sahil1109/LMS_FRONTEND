@@ -19,9 +19,10 @@ function EmpDashboard() {
   let [history,setHistory]=useContext(HistoryContext)
   
   const getEmpInfo=()=>{
+    console.log('fetching employee info')
     axios.get(`http://10.9.8.150:5000/api/employee/${empid._id}`)
     .then((res)=>{
-      console.log(res.data)
+     
       setEmpInfo(res.data)
     })
     .catch((err)=>{
@@ -30,9 +31,9 @@ function EmpDashboard() {
   }
 
   const getHistory=()=>{
-    axios.get(`http://10.9.8.150:5000/api/leave/employee/${empid._id}/pending`)
+    console.log('fetching history')
+    axios.get(`http://10.9.8.150:5000/api/leave/employee/${empid._id}/111`)
     .then((res)=>{
-      console.log('history',res.data)
       setHistory(res.data)
     })
     .catch((err)=>{
@@ -41,6 +42,7 @@ function EmpDashboard() {
   }
 
   useEffect(()=>{
+    console.log('mounting')
     getEmpInfo()
     getHistory()
   },[])

@@ -1,5 +1,5 @@
 import React from "react";
-import "./EmployeeManager.css";
+// import "./EmployeeManager.css";
 
 function EmployeeManagerTable() {
   return (

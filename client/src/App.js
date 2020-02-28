@@ -16,6 +16,7 @@ import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 //importing providers
 import { EmpIdContext } from "./contexts/EmpId/EmpIdContext";
 
+import LeaveApproval from "./pages/LeaveApproval/LeaveApproval"
 function App(props) {
   let [empid, setEmpid] = useContext(EmpIdContext);
 
@@ -33,6 +34,9 @@ function App(props) {
             <Switch>
               <Route path="/addLeave">
                 <AddLeave></AddLeave>
+              </Route>
+              <Route path="/leaveApproval">
+                <LeaveApproval></LeaveApproval>
               </Route>
               <Route path="/">
                 <EmpDashboard />
