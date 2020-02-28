@@ -26,7 +26,7 @@ function LeaveTable(props) {
 
   const getRows = () => {
     return history.map(entry => {
-      console.log('converted date:',new Date(entry.startDate).getDate())
+      
       entry.nodays=getLeaveDuration(entry.startDate,entry.endDate)
       return <LeaveEntry id={entry.id} entry={entry}></LeaveEntry>;
     });
@@ -54,11 +54,6 @@ function LeaveTable(props) {
   );
 }
 
-//reducer code
-const mapStateToProps = state => {
-  return {
-    data: state.data
-  };
-};
 
-export default connect(mapStateToProps)(LeaveTable);
+
+export default LeaveTable;

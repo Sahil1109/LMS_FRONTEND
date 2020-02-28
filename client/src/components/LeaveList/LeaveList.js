@@ -1,6 +1,6 @@
 import React,{useContext}from "react";
 import LeaveListEntry from "./LeaveListEntry";
-import { connect } from "react-redux";
+
 
 import {EmployeeContext} from '../../contexts/Emp/EmployeeContext'
 import "./leaveList.css";
@@ -9,8 +9,6 @@ function LeaveList(props) {
 
   let [empInfo,setEmpInfo]=useContext(EmployeeContext)
   
-  // console.log('employee sick available:',empInfo.available._id)
-
   const getData = () => {
     
     return props.leaves.map((leave, index) => {
@@ -61,17 +59,13 @@ function LeaveList(props) {
 
         
 
-        {/* {getData()} */}
+  
         
       </table>
     </div>
   );
 }
 
-const mapStateToProps = state => {
-  return {
-    leaves: state.leaves
-  };
-};
 
-export default connect(mapStateToProps)(LeaveList);
+
+export default LeaveList;
