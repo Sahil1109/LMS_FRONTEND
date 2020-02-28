@@ -9,7 +9,7 @@ import "./LeaveTable.css";
 function LeaveTable(props) {
 
   let [history,setHistory]=useContext(HistoryContext)
-  console.log('history:',history)
+  
 
   const getRows = () => {
     return props.data.map(entry => {
@@ -19,6 +19,7 @@ function LeaveTable(props) {
 
 
   return (
+    history===undefined?null:
     <div id="table">
       <table>
         <tbody>

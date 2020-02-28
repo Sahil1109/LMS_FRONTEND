@@ -30,9 +30,10 @@ function EmpDashboard() {
   }
 
   const getHistory=()=>{
-    axios.get(`http://10.9.8.150:5000/api/leave/approver/${empid._id}/1234/`)
+    axios.get(`http://10.9.8.150:5000/api/leave/employee/${empid._id}/pending`)
     .then((res)=>{
-      console.log(res.data)
+      console.log('history',res.data)
+      setHistory(res.data)
     })
     .catch((err)=>{
       console.log('error while fetching emp history')
