@@ -1,14 +1,8 @@
 import React from "react";
+import getStringDate from '../../handlers/StringData'
 
 function PendingRequestEntry(props) {
-  let month = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul","Aug", "Sep", "Oct", "Nov", "Dec"]
-
-  const getStringDate=(fd)=>{
-    let date=new Date(fd)
-    let stringVal=date.getDate().toString()+"-"+month[date.getMonth()]+"-"+date.getFullYear().toString()
-    return stringVal
-  }
-
+  
 
   return (
     <tr>
