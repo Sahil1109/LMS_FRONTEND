@@ -43,7 +43,15 @@ td , th{
     padding:0.8rem;
     border-radius:5px;
     font-weight: bold;
+    transition: background 500ms;
 }
 #reject{
     background: rgb(233, 3, 3);
+}
+
+#accept:hover{
+    background: rgb(21, 145, 21);
+}
+#reject:hover{
+    background: rgb(185, 3, 3);
 }

@@ -1,4 +1,5 @@
 import React, { useContext } from "react";
+import Footer from '../../components/Footer/Footer'
 import { useFormState } from "react-use-form-state";
 import { EmpIdContext } from "../../contexts/EmpId/EmpIdContext";
 import axios from 'axios'
@@ -32,6 +33,7 @@ function Login(props) {
   };
 
   return (
+    <>
     <div id="loginBoard">
       <div id="header">
         <img
@@ -48,19 +50,21 @@ function Login(props) {
         </div>
 
         <div className="groupfield">
-          <input {...password("passw")} />
+          <input {...password("passw")} placeholder="****"/>
         </div>
 
         <div id="buttonA">
           <input id="check" type="checkbox" name="check1" />{" "}
           <span>Remember me</span> <br />
-          <a href="/">Forgot Password</a>
+          <a href="/">Forgot Password?</a>
           <br />
           <br />
           <button type="submit">Log in</button>
         </div>
       </form>
     </div>
+    <Footer/>
+    </>
   );
 }
 

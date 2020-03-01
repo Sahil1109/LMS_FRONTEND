@@ -81,13 +81,13 @@ function AddLeave() {
             minDate={startDate}
           />
           <select {...select("hf")}>
-            <option value="Half">Half</option>
-            <option value="Full">Full</option>
+            <option value="Half">Half Day</option>
+            <option value="Full">Full Full</option>
           </select>
         </div>
 
         <div className="field-group">
-          <label>Leave Type:</label>
+          <label>Leave Type </label>
           <select {...select("leaveType")}>
             <option value="casual">casual</option>
             <option value="sick">sick</option>

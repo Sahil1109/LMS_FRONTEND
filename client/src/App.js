@@ -2,6 +2,7 @@ import React, { useContext } from "react";
 //Fixed components
 import Nav from "./components/NavAndSide/Nav";
 import Sidebar from "./components/NavAndSide/SideBar";
+import Footer from './components/Footer/Footer'
 //Pages
 import EmpDashboard from "./pages/EmpDashboard/EmpDashboard";
 import Login from "./pages/Login/Login";
@@ -47,6 +48,7 @@ function App(props) {
 
          
         </div>
+        <Footer/>
       </div>
     </Router>
   ) : (
