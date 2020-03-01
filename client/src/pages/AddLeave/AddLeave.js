@@ -24,40 +24,13 @@ function AddLeave() {
     hf: "Half"
   });
 
-  const getStringVal = date => {
-    var months = [
-      "01",
-      "02",
-      "03",
-      "04",
-      "05",
-      "06",
-      "07",
-      "08",
-      "09",
-      "10",
-      "11",
-      "12"
-    ];
-    let stringVal =
-      date.getFullYear().toString() +
-      "-" +
-      months[date.getMonth()] +
-      "-" +
-      date.getDate().toString();
-    return stringVal;
-  };
-
   const handleSubmit = e => {
     e.preventDefault();
 
-    let startDateS = getStringVal(startDate);
-    let endDateS = getStringVal(endDate);
+    let startDateS = startDate.toISOString();
+    let endDateS = endDate.toISOString();
     let hf = formState.values.hf;
     let leaveType = formState.values.leaveType;
-    let ss = startDate.getTime() / 1000;
-    let es = endDate.getTime() / 1000;
-
     let desc = formState.values.description;
 
     let obj = {
@@ -80,12 +53,9 @@ function AddLeave() {
         console.log('not applied');
         console.log(err.response)
       });
-    console.log("object,", obj);
-
     //cleaning up
     formState.reset();
     setStartDate(new Date());
-    // history.push("/");
     e.target.reset();
   };
 

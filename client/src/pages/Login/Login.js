@@ -16,7 +16,7 @@ function Login(props) {
     let emailV=formState.values.email
     let passw=formState.values.passw
     axios
-      .post("http://10.9.8.150:5000/api/auth", {
+      .post("https://mg8n2x0r67.execute-api.ap-south-1.amazonaws.com/dev/api/auth", {
         email:emailV,
         password: passw
         
