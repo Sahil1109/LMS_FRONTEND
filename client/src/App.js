@@ -20,7 +20,7 @@ import LeaveApproval from "./pages/LeaveApproval/LeaveApproval"
 function App(props) {
   let [empid, setEmpid] = useContext(EmpIdContext);
 
-  return empid != null ? (
+  return empid != null? (
     <Router basename={`${process.env.PUBLIC_URL}/`}>
       <div className="App" id="app">
         <div id="top">

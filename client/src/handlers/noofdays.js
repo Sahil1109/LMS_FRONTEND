@@ -1,4 +1,4 @@
-export const getLeaveDuration=(start, end)=>{
+const getLeaveDuration=(start, end)=>{
     let startDate = new Date(start)
     let endDate = new Date(end)
     let count = 0;
@@ -11,3 +11,5 @@ export const getLeaveDuration=(start, end)=>{
     }
     return count;
 }
+
+export default getLeaveDuration
