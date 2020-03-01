@@ -2,6 +2,7 @@ import React, { useState, useContext } from "react";
 import DatePicker from "react-date-picker";
 import { useFormState } from "react-use-form-state";
 import { useHistory } from "react-router-dom";
+import RootURL from '../../handlers/RootUrl'
 import axios from "axios";
 import { EmployeeContext } from "../../contexts/Emp/EmployeeContext";
 import { EmpIdContext } from "../../contexts/EmpId/EmpIdContext";
@@ -26,7 +27,6 @@ function AddLeave() {
 
   const handleSubmit = e => {
     e.preventDefault();
-
     let startDateS = startDate.toISOString();
     let endDateS = endDate.toISOString();
     let hf = formState.values.hf;
@@ -44,10 +44,9 @@ function AddLeave() {
     };
 
     axios
-      .post("http://10.9.8.150:5000/api/leave", obj)
+      .post(`${RootURL}/leave`, obj)
       .then(res => {
         console.log("done");
-        
       })
       .catch((err,data) => {
         console.log('not applied');

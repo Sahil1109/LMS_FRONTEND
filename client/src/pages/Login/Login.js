@@ -2,6 +2,7 @@ import React, { useContext } from "react";
 import Footer from '../../components/Footer/Footer'
 import { useFormState } from "react-use-form-state";
 import { EmpIdContext } from "../../contexts/EmpId/EmpIdContext";
+import RootURL from '../../handlers/RootUrl'
 import axios from 'axios'
 import "./login.css";
 
@@ -14,10 +15,11 @@ function Login(props) {
 
     const handleSubmit = event => {
     event.preventDefault();
+    console.log('making request at:',`${RootURL}/auth`)
     let emailV=formState.values.email
     let passw=formState.values.passw
     axios
-      .post("https://mg8n2x0r67.execute-api.ap-south-1.amazonaws.com/dev/api/auth", {
+      .post(`${RootURL}/auth`, {
         email:emailV,
         password: passw
         

@@ -14,13 +14,11 @@ function LeaveTable(props) {
   
   const getRows = () => {
     return history.map(entry => {
-      
       entry.nodays=getLeaveDuration(entry.startDate,entry.endDate)
       return <LeaveEntry id={entry.id} entry={entry}></LeaveEntry>;
     });
   };
-
-
+  
   return (
     history===undefined?null:
     <div id="table">
