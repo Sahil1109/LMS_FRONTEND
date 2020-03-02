@@ -41,7 +41,7 @@ function AddLeave() {
     };
     console.log(obj)
 
-    if(hf && (startDate===endDate)){
+    if((hf && (startDate===endDate))||(!hf && (startDate!==endDate))){
       axios
       .post(`${RootURL}/leave`, obj)
       .then(res => {
