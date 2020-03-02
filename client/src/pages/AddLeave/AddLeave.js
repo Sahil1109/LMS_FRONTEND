@@ -54,6 +54,7 @@ function AddLeave() {
         console.log('not applied');
         console.log(err.response)
       });
+    }
 
     
 
