@@ -11,7 +11,7 @@ import axios from 'axios'
 import RootURL from '../../handlers/RootUrl'
 //importing css files
 import "./empdashboard.css";
-import Axios from "axios";
+
 
 function EmpDashboard() {
 
@@ -40,6 +40,7 @@ function EmpDashboard() {
   }
 
   useEffect(()=>{
+    console.log('mounting................')
     getEmpInfo()
     getHistory()
   },[])

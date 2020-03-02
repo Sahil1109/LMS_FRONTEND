@@ -27,21 +27,19 @@ function AddLeave() {
 
   const handleSubmit = e => {
     e.preventDefault();
-    let startDateS = startDate.toISOString();
-    let endDateS = endDate.toISOString();
     let hf = formState.values.hf;
-    let leaveType = formState.values.leaveType;
-    let desc = formState.values.description;
-
     let obj = {
+      firstName:empInfo.firstName,
+      lastName:empInfo.lastName,
       employeeId: empid._id,
       approverId: empInfo.approver,
-      startDate: startDateS,
-      endDate: endDateS,
-      leaveType: leaveType.toLowerCase(),
+      startDate: startDate.toISOString(),
+      endDate: endDate.toISOString(),
+      leaveType: formState.values.leaveType.toLowerCase(),
       halfDay:false,
-      description: desc
+      description:formState.values.description
     };
+    console.log(obj)
 
     axios
       .post(`${RootURL}/leave`, obj)

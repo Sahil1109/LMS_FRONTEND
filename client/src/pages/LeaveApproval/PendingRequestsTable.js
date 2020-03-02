@@ -23,8 +23,6 @@ function PendingRequests(props) {
         }).catch((err)=>{
           console.log(err.response())
         })
-
-        
       }
 
      
