@@ -20,7 +20,7 @@ function Nav(props) {
       </div>
 
       <div id="log">
-        <span>{" "+empid.name+" "}</span>
+        <span><b>{" "+empid.name+" "}</b></span>
         <img
           src={require("../../icons/userb.png")}
           id="user_img"

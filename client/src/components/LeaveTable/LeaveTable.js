@@ -1,6 +1,5 @@
 import React,{useContext}from "react";
 import LeaveEntry from "./LeaveEntry";
-import { connect } from "react-redux";
 
 import getLeaveDuration from '../../handlers/noofdays'
 
@@ -15,7 +14,7 @@ function LeaveTable(props) {
   const getRows = () => {
     return history.map(entry => {
       entry.nodays=getLeaveDuration(entry.startDate,entry.endDate)
-      return <LeaveEntry id={entry.id} entry={entry}></LeaveEntry>;
+      return <LeaveEntry  key={entry.id} entry={entry}></LeaveEntry>;
     });
   };
   
@@ -23,7 +22,7 @@ function LeaveTable(props) {
     history===undefined?null:
     <div id="table">
       <table>
-        <tbody>
+        <tbody key={123}>
           <tr id="thr">
             <th>Leave Type</th>
             <th>From</th>
