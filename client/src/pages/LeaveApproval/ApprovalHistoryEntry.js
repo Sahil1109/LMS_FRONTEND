@@ -13,7 +13,7 @@ function ApprovalHistoryEntry(props) {
         <td>{props.entry.firstName}</td>
         <td>{getStringDate(props.entry.startDate)}</td>
         <td>{getStringDate(props.entry.endDate)}</td>
-        <td>{getLeaveDuration(props.entry.startDate,props.entry.endDate)}</td>
+        <td>{getLeaveDuration(props.entry.startDate,props.entry.endDate,props.entry.halfDay)}</td>
         <td><span id="astatus" style={customStyling}>{props.entry.status}</span></td>
       </tr>
     </tbody>
