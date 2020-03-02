@@ -113,7 +113,7 @@ function AddLeave() {
             applying for more than 2 days sick leave
           </span>
           <label for="files" id="attachFiles">
-            Attach Document
+             Attach Document
           </label>
           <input
             type="file"
