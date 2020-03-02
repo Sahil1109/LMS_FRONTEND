@@ -104,9 +104,14 @@ function AddLeave() {
             <br />
             applying for more than 2 days sick leave
           </span>
+          <label for="files" id="attachFiles">
+            Attach Document
+          </label>
           <input
             type="file"
+            id="files"
             label="Upload"
+            text="Attach document"
             className="fileU"
             ref={ref => (fileUpload = ref)}
           />
