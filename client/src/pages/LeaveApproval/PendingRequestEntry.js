@@ -7,8 +7,10 @@ import getStringDate from "../../handlers/StringData";
 function PendingRequestEntry(props) {
   let [isOpenModalOpen, setIsModalOpen] = useState(false);
   let [formState, { text }] = useFormState();
+  let [status,setStatus]=useState(undefined)
 
-  const handleModalOpen = () => {
+  const handleModalOpen = (_status) => {
+    setStatus(_status)
     setIsModalOpen(true);
   };
 
@@ -17,6 +19,11 @@ function PendingRequestEntry(props) {
     console.log(formState.values.reason);
     setIsModalOpen(false);
   };
+  const handlePSubmit=()=>{
+    console.log(formState.values.reason)
+    props.onStatusChange(props.entry, props.entry._id,status)
+    setIsModalOpen(false);
+  }
 
   Modal.defaultStyles.content.width = "30vw";
   Modal.defaultStyles.content.height = "30vw";
@@ -39,7 +46,7 @@ function PendingRequestEntry(props) {
               type="button"
               id="accept"
               onClick={() =>
-                props.onStatusChange(props.entry, props.entry._id, "approved")
+                handleModalOpen("approved")
               }
             >
               Accept
@@ -47,7 +54,7 @@ function PendingRequestEntry(props) {
             <button
               type="button"
               id="reject"
-              onClick={() => props.onStatusChange(props.entry,props.entry._id, "rejected")}
+              onClick={() => handleModalOpen("rejected")}
             >
               Reject
             </button>
@@ -59,7 +66,7 @@ function PendingRequestEntry(props) {
         <form>
           <input {...text("reason")} />
           <br />
-          <button type="button">Submit</button>
+          <button type="button" onClick={handlePSubmit}>Submit</button>
         </form>
       </Modal>
     </>
