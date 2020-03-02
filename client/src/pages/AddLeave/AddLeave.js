@@ -13,7 +13,7 @@ function AddLeave() {
   let fileUpload;
   let history = useHistory();
   let [startDate, setStartDate] = useState(new Date());
-  let [endDate, setEndDate] = useState(new Date());
+  let [endDate, setEndDate] = useState(startDate);
 
   //getting context data
   let [empInfo, setEmpInfo] = useContext(EmployeeContext);
@@ -41,15 +41,23 @@ function AddLeave() {
     };
     console.log(obj)
 
-    axios
+    if(hf && (startDate===endDate)){
+      axios
       .post(`${RootURL}/leave`, obj)
       .then(res => {
         console.log("done");
+        alert('Leave applied')
       })
       .catch((err,data) => {
         console.log('not applied');
         console.log(err.response)
       });
+
+    }else{
+      alert('start and end date need to be same')
+    }
+
+    
     //cleaning up
     formState.reset();
     setStartDate(new Date());
@@ -105,7 +113,7 @@ function AddLeave() {
             applying for more than 2 days sick leave
           </span>
           <label for="files" id="attachFiles">
-            Attach Document
+             Attach Document
           </label>
           <input
             type="file"

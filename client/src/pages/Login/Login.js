@@ -51,7 +51,7 @@ function Login(props) {
         </div>
 
         <div className="groupfield">
-          <input {...password("passw")} placeholder="****"/>
+          <input {...password("passw")} placeholder="Password"/>
         </div>
 
         <div id="buttonA">
