@@ -9,7 +9,8 @@ function ApprovalHistoryEntry(props) {
   return (
     <tbody>
       <tr>
-        <td>{props.entry.leaveType}</td>
+        <td>{props.entry.leaveType[0].toUpperCase() +  
+            props.entry.leaveType.slice(1)}</td>
         <td>{props.entry.firstName}</td>
         <td>{getStringDate(props.entry.startDate)}</td>
         <td>{getStringDate(props.entry.endDate)}</td>
