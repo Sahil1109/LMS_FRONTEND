@@ -73,6 +73,29 @@ span#warning{
     font-size:0.8rem;
     color:red;
 }
+#files{
+    visibility: hidden;
+    
+}
+
+#attachFiles{
+    
+    max-width: fit-content;
+    border-radius:5px;
+    padding: 7.5px;
+    color: white;
+    background-color: #05B7E8;
+    box-sizing: border-box;
+    width: 12vw;
+    font-size: 0.7rem;
+    border-radius: 3px;
+    border: none;
+    box-shadow: 2px 2px 4px black;
+    background: #05b7e8;
+    color: white;
+    margin: 10px;
+    cursor: pointer;
+}
 
 
 
