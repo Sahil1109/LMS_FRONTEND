@@ -41,7 +41,9 @@ function AddLeave() {
     };
     console.log(obj)
 
-    if((hf && (startDate===endDate))||(!hf && (startDate!==endDate))){
+    if(hf && (startDate !== endDate)){
+      alert('start and end date need to be same')
+    }else{
       axios
       .post(`${RootURL}/leave`, obj)
       .then(res => {
@@ -53,8 +55,6 @@ function AddLeave() {
         console.log(err.response)
       });
 
-    }else{
-      alert('start and end date need to be same')
     }
 
     
