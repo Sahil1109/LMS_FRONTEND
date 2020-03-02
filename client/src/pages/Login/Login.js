@@ -15,7 +15,6 @@ function Login(props) {
 
     const handleSubmit = event => {
     event.preventDefault();
-    console.log('making request at:',`${RootURL}/auth`)
     let emailV=formState.values.email
     let passw=formState.values.passw
     axios
