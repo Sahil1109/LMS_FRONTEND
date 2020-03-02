@@ -46,7 +46,7 @@ function AddLeave() {
       .post(`${RootURL}/leave`, obj)
       .then(res => {
         console.log("done");
-        alert('Leave applied')
+        alert('Leave applied successfully')
       })
       .catch((err,data) => {
         console.log('not applied');
@@ -54,7 +54,7 @@ function AddLeave() {
       });
 
     }else{
-      alert('start and end date need to be same')
+      alert('Half day leave can be applied for single day')
     }
 
     
