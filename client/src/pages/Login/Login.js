@@ -3,6 +3,7 @@ import Footer from '../../components/Footer/Footer'
 import { useFormState } from "react-use-form-state";
 import { EmpIdContext } from "../../contexts/EmpId/EmpIdContext";
 import RootURL from '../../handlers/RootUrl'
+import setSession from '../../handlers/sessionHandler'
 import axios from 'axios'
 import "./login.css";
 
@@ -17,23 +18,16 @@ function Login(props) {
     event.preventDefault();
     let emailV=formState.values.email
     let passw=formState.values.passw
+    
     axios
       .post(`${RootURL}/auth`, {
         email:emailV,
         password: passw
-        
       })
       .then(res => {
-        console.log(res.data);
-        sessionStorage.setItem('empid',res.data._id)
-        sessionStorage.setItem('name',res.data.name)
-        sessionStorage.setItem('role',res.data.role)
-        sessionStorage.setItem('email',res.data.email)
+        console.log(res.data)
+        setSession(res.data)
         setEmpid(res.data)
-        
-
-        
-        
       })
       .catch((err)=>{
         console.log(err)

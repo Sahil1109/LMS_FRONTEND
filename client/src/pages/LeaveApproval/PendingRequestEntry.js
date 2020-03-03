@@ -28,7 +28,7 @@ function PendingRequestEntry(props) {
 
   Modal.defaultStyles.content.width = "30vw";
   Modal.defaultStyles.content.boxSizing="border-box"
-  Modal.defaultStyles.content.height = "30vw";
+  Modal.defaultStyles.content.height = "23vw";
   Modal.defaultStyles.content.textAlign = "center";
   Modal.defaultStyles.content.marginLeft = "35vw";
   Modal.defaultStyles.content.padding = "2.5rem";
@@ -63,10 +63,10 @@ function PendingRequestEntry(props) {
         </tr>
       </tbody>
 
-      <Modal isOpen={isOpenModalOpen} ariaHideApp={false}>
+      <Modal isOpen={isOpenModalOpen} ariaHideApp={false} onRequestClose={()=>{setIsModalOpen(false)}}>
         <h2>Specify Reason</h2><br/>
         <form>
-          <input {...text("reason")} id="resi" />
+          <textarea {...text("reason")} rows="5" columns="10" id="resi" />
           <br /><br/><br/>
           <button type="button" id="resb" onClick={handlePSubmit}>Submit</button>
         </form>

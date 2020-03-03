@@ -61,10 +61,11 @@ td , th{
     box-shadow: 4px 4px 6px black;
 }
 
-input#resi{
-    box-shadow: 4px 4px 6px black;
+textarea#resi{
+    box-shadow: 4px 4px 10px black;
     border:none;
-    padding:1rem;
+    padding:0.6rem;
+    font-family: 0.9rem;
     width:80%;
 
 }

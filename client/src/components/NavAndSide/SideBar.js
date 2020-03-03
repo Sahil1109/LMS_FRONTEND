@@ -68,7 +68,7 @@ function SideBar() {
 
       {
         role=='admin'?
-        <button type="button" onClick={()=>{loadAnotherPage('addEmployee')}} key="6" >
+        <button type="button" onClick={()=>{loadAnotherPage('addEmployee')}} key="6" className={location.pathname==='/addEmployee'?'selected':''}>
         Add/Edit Employee{" "}
         <img
           src={require("../../icons/arrowb.png")}
