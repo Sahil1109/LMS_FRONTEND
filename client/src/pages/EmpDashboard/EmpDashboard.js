@@ -16,6 +16,8 @@ import "./empdashboard.css";
 function EmpDashboard() {
 
   let [empid,setEmpid]=useContext(EmpIdContext)
+  console.log('session value:',sessionStorage.getItem('empid'))
+  console.log('session value:',sessionStorage.getItem('name'))
   let [empInfo,setEmpInfo]=useContext(EmployeeContext)
   let [history,setHistory]=useContext(HistoryContext)
   
@@ -41,6 +43,7 @@ function EmpDashboard() {
 
   useEffect(()=>{
     console.log('mounting................')
+    console.log('value of empid while mounting',empid)
     getEmpInfo()
     getHistory()
   },[])

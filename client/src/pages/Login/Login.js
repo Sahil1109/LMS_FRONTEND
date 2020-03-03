@@ -25,7 +25,15 @@ function Login(props) {
       })
       .then(res => {
         console.log(res.data);
+        sessionStorage.setItem('empid',res.data._id)
+        sessionStorage.setItem('name',res.data.name)
+        sessionStorage.setItem('role',res.data.role)
+        sessionStorage.setItem('email',res.data.email)
         setEmpid(res.data)
+        
+
+        
+        
       })
       .catch((err)=>{
         console.log(err)

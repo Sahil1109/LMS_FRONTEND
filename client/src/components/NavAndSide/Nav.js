@@ -8,6 +8,7 @@ function Nav(props) {
   let history=useHistory()
   const logout=()=>{
     setEmpid(null)
+    sessionStorage.clear()
     history.push('/')
   }
   return (

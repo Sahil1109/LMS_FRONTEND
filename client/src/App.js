@@ -22,6 +22,8 @@ import LeaveApproval from "./pages/LeaveApproval/LeaveApproval"
 import AddEmployee from "./pages/EmployeeManager/AddEmployee/AddEmployee"
 function App(props) {
   let [empid, setEmpid] = useContext(EmpIdContext);
+  console.log('context value:',empid)
+  console.log('session value',sessionStorage.getItem('empid'))
 
   return empid != null? (
     <Router basename={`${process.env.PUBLIC_URL}/`}>
