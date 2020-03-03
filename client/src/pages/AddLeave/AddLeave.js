@@ -114,7 +114,8 @@ function AddLeave() {
             applying for more than 2 days sick leave
           </span>
           <label for="files" id="attachFiles">
-             Attach Document
+             Attach Document<br/>
+            <span className="upcoming"><sup>*</sup>upcoming feature</span>
           </label>
           <input
             type="file"
@@ -128,7 +129,7 @@ function AddLeave() {
 
         <div className="field-group submit" style={{ textAlign: "center" }}>
           <button type="submit">ApplyLeave</button>
-          <button type="submit">Cancel</button>
+          <button type="button">Cancel</button>
         </div>
       </form>
     </div>
