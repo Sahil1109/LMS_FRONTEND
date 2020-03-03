@@ -2,6 +2,7 @@ import React, { useState, useContext } from "react";
 import DatePicker from "react-date-picker";
 import { useFormState } from "react-use-form-state";
 import { useHistory } from "react-router-dom";
+import compDates from '../../handlers/compDates'
 import RootURL from '../../handlers/RootUrl'
 import axios from "axios";
 import { EmployeeContext } from "../../contexts/Emp/EmployeeContext";
@@ -40,7 +41,7 @@ function AddLeave() {
       description:formState.values.description
     };
     console.log(obj)
-
+    console.log('handler result:',compDates(startDate,endDate,hf))
     if(hf && (startDate !== endDate)){
       alert('start and end date need to be same')
     }else{
