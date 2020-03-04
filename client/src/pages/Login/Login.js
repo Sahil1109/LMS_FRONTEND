@@ -26,7 +26,7 @@ function Login(props) {
       })
       .then(res => {
         console.log(res.data)
-        setSession(res.data)
+        sessionStorage.setItem('empid',JSON.stringify(res.data))
         setEmpid(res.data)
       })
       .catch((err)=>{
