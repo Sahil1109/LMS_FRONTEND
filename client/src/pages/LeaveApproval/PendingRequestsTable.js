@@ -27,7 +27,8 @@ function PendingRequests(props) {
 
      
       const getRows = () => {
-        return ahistory.map(entry => {
+        let rev_ahist=ahistory.reverse()
+        return rev_ahist.map(entry => {
           
             if(entry.status==='pending'){
               return (<PendingRequestEntry onStatusChange={onStatusChange} id={entry._id} entry={entry}></PendingRequestEntry>)

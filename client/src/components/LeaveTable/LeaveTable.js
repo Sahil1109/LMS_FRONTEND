@@ -12,6 +12,7 @@ function LeaveTable(props) {
   let [history,setHistory]=useContext(HistoryContext)
   
   const getRows = () => {
+    let rev_his=history.reverse()
     return history.map(entry => {
       entry.nodays=getLeaveDuration(entry.startDate,entry.endDate,entry.halfDay)
       return <LeaveEntry  key={entry.id} entry={entry}></LeaveEntry>;

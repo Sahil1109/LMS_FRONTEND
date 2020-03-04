@@ -8,7 +8,8 @@ import {ApprovalHistoryContext} from '../../contexts/AprrovalHistory/ApprovalHis
 function ApprovalHistory() {
   let [ahistory,setAhistory]=useContext(ApprovalHistoryContext)
   const getRows = () => {
-    return ahistory.map(entry => {
+    let rev_ahist=ahistory.reverse()
+    return rev_ahist.map(entry => {
         console.log('checking enrty',entry)
         if(entry.status!=='pending'){
           
