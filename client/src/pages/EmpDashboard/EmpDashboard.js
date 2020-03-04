@@ -24,7 +24,9 @@ function EmpDashboard() {
   const getEmpInfo=()=>{
     axios.get(`${RootURL}/employee/${empid._id}`)
     .then((res)=>{
+      sessionStorage.setItem('empinfo',JSON.stringify(res.data))
       setEmpInfo(res.data)
+      
     })
     .catch((err)=>{
       console.log('error while fetching emp info')

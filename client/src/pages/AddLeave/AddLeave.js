@@ -1,11 +1,10 @@
-import React, { useState, useContext } from "react";
+import React, { useState, useContext ,useEffect} from "react";
 import DatePicker from "react-date-picker";
 import { useFormState } from "react-use-form-state";
 import { useHistory } from "react-router-dom";
 import compDates from '../../handlers/compDates'
 import RootURL from '../../handlers/RootUrl'
 import axios from "axios";
-import { EmployeeContext } from "../../contexts/Emp/EmployeeContext";
 import { EmpIdContext } from "../../contexts/EmpId/EmpIdContext";
 import { HistoryContext } from "../../contexts/History/HistoryContext";
 import "./AddLeave.css";
@@ -17,9 +16,14 @@ function AddLeave() {
   let [endDate, setEndDate] = useState(startDate);
 
   //getting context data
-  let [empInfo, setEmpInfo] = useContext(EmployeeContext);
+  let empInfo=JSON.parse(sessionStorage.getItem('empinfo'))
   let [empid, setEmpid] = useContext(EmpIdContext);
   let [histories, setHistory] = useContext(HistoryContext);
+
+  useEffect(()=>{
+    console.log('session empinfo val***************')
+    console.log(JSON.parse(sessionStorage.getItem('empinfo')))
+  },[])
 
   const [formState, { select, text }] = useFormState({
     leaveType: "casual",
