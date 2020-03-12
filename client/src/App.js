@@ -2,6 +2,7 @@ import React, { useContext } from "react";
 //Fixed components
 import Nav from "./components/NavAndSide/Nav";
 import Sidebar from "./components/NavAndSide/SideBar";
+import Sidebar2 from './components/Sidebar/Sidebar2'
 import Footer from './components/Footer/Footer'
 import Navbar from './components/Navbar/Navbar'
 //Pages
@@ -34,7 +35,7 @@ function App(props) {
         </div>
 
         <div id="main">
-          <Sidebar></Sidebar>
+          <Sidebar2/>
 
           <div>
             <Switch>
