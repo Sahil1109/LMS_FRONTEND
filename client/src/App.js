@@ -6,7 +6,7 @@ import Navbar from './components/Navbar/Navbar'
 //Pages
 import EmpDashboard from "./pages/EmpDashboard/EmpDashboard";
 import Login from "./pages/Login/Login";
-import AddLeave from "./pages/AddLeave/AddLeave";
+import LeaveApproval from './pages/LeaveApproval/LeaveApproval'
 import ApplyLeave from './pages/ApplyLeave/ApplyLeave'
 //css file import
 import "./App.css";
@@ -18,7 +18,7 @@ import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 //importing providers
 import { EmpIdContext } from "./contexts/EmpId/EmpIdContext";
 
-import LeaveApproval from "./pages/LeaveApproval/LeaveApproval"
+
 
 import AddEmployee from "./pages/EmployeeManager/AddEmployee/AddEmployee"
 function App(props) {
@@ -45,7 +45,7 @@ function App(props) {
                 <ApplyLeave/>
               </Route>
               <Route exact path="/leaveApproval">
-                <LeaveApproval></LeaveApproval>
+                <LeaveApproval/>
               </Route>
               <Route exact path="/addEmployee">
                 <AddEmployee></AddEmployee>
