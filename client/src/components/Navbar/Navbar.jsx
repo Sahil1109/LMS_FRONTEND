@@ -13,7 +13,7 @@ import {
 } from "@material-ui/core/"; 
 
 import AccountCircle from "@material-ui/icons/AccountCircle";
-
+import stringCap from "../../handlers/stringCap"
 const Navbar = () => {
   const [anchorEl, setAnchorEl] = React.useState(null);
   const open = Boolean(anchorEl);
@@ -50,7 +50,7 @@ const Navbar = () => {
           </div>
 
           <div>
-          <Box component="span" fontSize="0.9rem" fontFamily="Helvetica">{empid.name+" "}</Box>
+          <Box component="span" fontSize="0.9rem" fontFamily="Helvetica">{stringCap(empid.name)+" "}</Box>
             <IconButton
               aria-label="account of current user"
               aria-controls="menu-appbar"
