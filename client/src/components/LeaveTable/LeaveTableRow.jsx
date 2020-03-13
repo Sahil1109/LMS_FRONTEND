@@ -1,5 +1,6 @@
 import React from "react";
 import stringCap from "../../handlers/stringCap"
+import getStringDate from '../../handlers/StringData'
 import {
     TableCell,
     TableRow,
@@ -12,11 +13,11 @@ const LeaveTableRow = (props) => {
       <TableCell component="th" scope="row">
         {stringCap(props.row.leaveType)}
       </TableCell>
-      <TableCell align="right">{props.row.startDate}</TableCell>
-      <TableCell align="right">{props.row.endDate}</TableCell>
+      <TableCell align="right">{getStringDate(props.row.startDate)}</TableCell>
+      <TableCell align="right">{getStringDate(props.row.endDate)}</TableCell>
       <TableCell align="right">{props.row.daysCount}</TableCell>
       <TableCell align="right">{stringCap(props.row.status)}</TableCell>
-      <TableCell align="right"><Link style={{cursor:"pointer"}}><EditIcon/></Link></TableCell>
+      <TableCell align="right">{props.row.status==="pending"?<Link style={{cursor:"pointer"}}><EditIcon/></Link>:''}</TableCell>
     </TableRow>
   );
 };

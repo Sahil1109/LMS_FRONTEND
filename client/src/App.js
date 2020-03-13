@@ -7,6 +7,7 @@ import Navbar from './components/Navbar/Navbar'
 import EmpDashboard from "./pages/EmpDashboard/EmpDashboard";
 import Login from "./pages/Login/Login";
 import AddLeave from "./pages/AddLeave/AddLeave";
+import ApplyLeave from './pages/ApplyLeave/ApplyLeave'
 //css file import
 import "./App.css";
 
@@ -41,7 +42,7 @@ function App(props) {
                 <EmpDashboard />
               </Route>
               <Route exact path="/addLeave">
-                <AddLeave></AddLeave>
+                <ApplyLeave/>
               </Route>
               <Route exact path="/leaveApproval">
                 <LeaveApproval></LeaveApproval>
