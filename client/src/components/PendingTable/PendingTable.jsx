@@ -112,6 +112,7 @@ const PendingTable = () => {
   const [page, setPage] = React.useState(0);
   const [rowsPerPage, setRowsPerPage] = React.useState(4);
   let [ahistory, setAhistory] = useContext(ApprovalHistoryContext);
+  console.log('pending approval history:',ahistory)
   let emptyRows=null 
   const setEmptyRows=()=>{
     emptyRows =rowsPerPage - Math.min(rowsPerPage, ahistory.length - page * rowsPerPage);
@@ -159,6 +160,7 @@ const PendingTable = () => {
             ? ahistory.slice(page * rowsPerPage, page * rowsPerPage + rowsPerPage)
             : ahistory
           ).map(row => {
+            console.log('checking:',row)
             if(row.status==="pending"){
               return <PendingTableRow onStatusChange={onStatusChange} key={ahistory.indexOf(row)} row={row} />
             }else{

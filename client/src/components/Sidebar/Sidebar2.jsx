@@ -42,8 +42,8 @@ export default function Sidebar2(props) {
       case 'leaveApproval':
         history.push('/leaveApproval')
         break;
-        case 'addEmployee':
-          history.push('/addEmployee')
+        case 'employeeManager':
+          history.push('/employeeManager')
           break;
       default:
         history.push("/");
@@ -94,7 +94,7 @@ export default function Sidebar2(props) {
         <LmsListItem
           button
           selected={selectedIndex === 3}
-          onClick={event => handleListItemClick(event, 3,'addEmployee')}
+          onClick={event => handleListItemClick(event, 3,'employeeManager')}
         >
           <ListItemIcon>
             <Icon className="selected">
