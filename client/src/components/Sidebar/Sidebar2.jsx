@@ -1,5 +1,4 @@
 import React, { useState,useContext} from "react";
-// import "./Sidebar2.css";
 import {
   List,
   ListItem,
@@ -55,7 +54,7 @@ export default function Sidebar2(props) {
       <Sidebar component="nav">
         <LmsListItem
           button
-          selected={selectedIndex === 0}
+          selected={location.pathname==='/'?true:false}
           onClick={event => handleListItemClick(event, 0,'dashboard')}
           color="primary"
         >
@@ -68,7 +67,7 @@ export default function Sidebar2(props) {
         </LmsListItem>
         <LmsListItem
           button
-          selected={selectedIndex === 1}
+          selected={location.pathname==='/addLeave'?true:false}
           onClick={event => handleListItemClick(event, 1,'applyLeave')}
         >
           <ListItemIcon>
@@ -80,7 +79,7 @@ export default function Sidebar2(props) {
         </LmsListItem>
         <LmsListItem
           button
-          selected={selectedIndex === 2}
+          selected={location.pathname==='/leaveApproval'?true:false}
           onClick={event => handleListItemClick(event, 2,'leaveApproval')}
         >
           <ListItemIcon>
@@ -93,7 +92,7 @@ export default function Sidebar2(props) {
         {role==='admin'?<><Divider />
         <LmsListItem
           button
-          selected={selectedIndex === 3}
+          selected={location.pathname==='/employeeManager'?true:false}
           onClick={event => handleListItemClick(event, 3,'employeeManager')}
         >
           <ListItemIcon>
@@ -105,7 +104,7 @@ export default function Sidebar2(props) {
         </LmsListItem>
         <LmsListItem
           button
-          selected={selectedIndex === 4}
+          selected={location.pathname==='/lm'?true:false}
           onClick={event => handleListItemClick(event, 4,'applyLeave')}
         >
           <ListItemIcon>
