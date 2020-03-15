@@ -1,4 +1,4 @@
-import React, { useContext } from "react";
+import React, { useContext,useState } from "react";
 import PropTypes from "prop-types";
 import { makeStyles, useTheme, styled } from "@material-ui/core/styles";
 import {
@@ -10,8 +10,10 @@ import {
   TableFooter,
   TablePagination,
   TableRow,
-  Paper
+  Paper,
+  Snackbar
 } from "@material-ui/core/";
+import MuiAlert from "@material-ui/lab/Alert";
 import PendingTableRow from "./PendingTableRow";
 import IconButton from "@material-ui/core/IconButton";
 import FirstPageIcon from "@material-ui/icons/FirstPage";
@@ -22,7 +24,6 @@ import axios from "axios";
 import RootURL from "../../handlers/RootUrl";
 //getting context
 import { ApprovalHistoryContext } from "../../contexts/AprrovalHistory/ApprovalHistoryContext";
-
 
 const useStyles1 = makeStyles(theme => ({
   root: {
@@ -101,26 +102,22 @@ TablePaginationActions.propTypes = {
   rowsPerPage: PropTypes.number.isRequired
 };
 
-const useStyles2 = makeStyles({
-  table: {
-    minWidth: 500,
-    maxWidth: 1000
-  }
-});
-
 const PendingTable = () => {
+  const [approveOpen,setApproveOpen]=useState(false)
+  const [rejectOpen,setRejectOpen]=useState(false)
   const [page, setPage] = React.useState(0);
-  const [rowsPerPage, setRowsPerPage] = React.useState(4);
+  const [rowsPerPage, setRowsPerPage] = React.useState(3);
   let [ahistory, setAhistory] = useContext(ApprovalHistoryContext);
-  let rev_history
-  console.log('pending approval history:',ahistory)
-  let emptyRows=null 
-  const setEmptyRows=()=>{
+  let rev_history;
+  console.log("pending approval history:", ahistory);
+  let emptyRows = null;
+  const setEmptyRows = () => {
     /*we are doing this so that pending leaves in the end will be pushed to front 
       as in pending table , we have to go to next page to see leaves*/
-    rev_history=ahistory.reverse()
-    emptyRows =rowsPerPage - Math.min(rowsPerPage, ahistory.length - page * rowsPerPage);
-  }
+    rev_history = ahistory.reverse();
+    emptyRows =
+      rowsPerPage - Math.min(rowsPerPage, ahistory.length - page * rowsPerPage);
+  };
   const handleChangePage = (event, newPage) => {
     setPage(newPage);
   };
@@ -130,12 +127,13 @@ const PendingTable = () => {
   };
   const onStatusChange = (_id, status) => {
     axios
-      .patch(`${RootURL}/leaves/${_id}`,{"status":status})
+      .patch(`${RootURL}/leaves/${_id}`, { status: status })
       .then(res => {
         let newahistory = ahistory.map(entry => {
           entry.status = entry.id === _id ? status : entry.status;
           return entry;
         });
+        status==="approved"?setApproveOpen(true):setRejectOpen(true)
         setAhistory(newahistory);
       })
       .catch(err => {
@@ -143,8 +141,7 @@ const PendingTable = () => {
       });
   };
 
-  return (
-    ahistory===undefined?null:
+  return ahistory === undefined ? null : (
     <TableContainer component={Paper}>
       {setEmptyRows()}
       <Table aria-label="custom pagination table">
@@ -160,15 +157,24 @@ const PendingTable = () => {
         </CustomHeader>
         <TableBody>
           {(rowsPerPage > 0
-          //need to check this code to see if any more variables need to be changed
-            ? rev_history.slice(page * rowsPerPage, page * rowsPerPage + rowsPerPage)
+            ? //need to check this code to see if any more variables need to be changed
+              rev_history.slice(
+                page * rowsPerPage,
+                page * rowsPerPage + rowsPerPage
+              )
             : rev_history
           ).map(row => {
-            console.log('checking:',row)
-            if(row.status==="pending"){
-              return <PendingTableRow onStatusChange={onStatusChange} key={rev_history.indexOf(row)} row={row} />
-            }else{
-              return
+            console.log("checking:", row);
+            if (row.status === "pending") {
+              return (
+                <PendingTableRow
+                  onStatusChange={onStatusChange}
+                  key={rev_history.indexOf(row)}
+                  row={row}
+                />
+              );
+            } else {
+              return;
             }
           })}
 
@@ -197,6 +203,38 @@ const PendingTable = () => {
           </TableRow>
         </TableFooter>
       </Table>
+      <Snackbar
+        open={approveOpen}
+        autoHideDuration={1500}
+        onClose={() => {
+          setApproveOpen(false);
+        }}
+      >
+        <Alert
+          onClose={() => {
+            setApproveOpen(false);
+          }}
+          severity="success"
+        >
+          Leave is Approved
+        </Alert>
+      </Snackbar>
+      <Snackbar
+        open={rejectOpen}
+        autoHideDuration={1500}
+        onClose={() => {
+          setRejectOpen(false);
+        }}
+      >
+        <Alert
+          onClose={() => {
+            setRejectOpen(false);
+          }}
+          severity="error"
+        >
+          Leave is rejected
+        </Alert>
+      </Snackbar>
     </TableContainer>
   );
 };
@@ -212,3 +250,7 @@ const CustomHeaderCell = styled(TableCell)(({ theme }) => ({
   fontWeight: "bold",
   padding: "0.5rem"
 }));
+
+function Alert(props) {
+  return <MuiAlert elevation={6} variant="filled" {...props} />;
+}

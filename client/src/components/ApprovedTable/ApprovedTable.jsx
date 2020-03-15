@@ -107,7 +107,7 @@ const useStyles2 = makeStyles({
 
 const ApprovedTable=()=>{
   const [page, setPage] = React.useState(0);
-  const [rowsPerPage, setRowsPerPage] = React.useState(4);
+  const [rowsPerPage, setRowsPerPage] = React.useState(3);
   let [ahistory,setAhistory]=useContext(ApprovalHistoryContext)
   let emptyRows=null 
   const setEmptyRows=()=>{
