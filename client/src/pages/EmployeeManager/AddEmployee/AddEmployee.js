@@ -98,7 +98,7 @@ const AddEmployee = () => {
     axios.get(url).then(json => setData(json.data));
   }, []);
 
-  const [approver, setApprover] = useState([data.firstName]);
+  const [approver, setApprover] = useState("");
   const handleStatusChange = event => {
     setStatus(event.target.value);
   };
@@ -185,6 +185,7 @@ const AddEmployee = () => {
     //     console.log("error while adding");
     //     console.log(err.response);
     //   });
+    //   data.reset();
   }; // your form submit function which will invoke after successful validation
 
   return (
@@ -193,8 +194,7 @@ const AddEmployee = () => {
         <form
           onSubmit={handleSubmit(onSubmit)}
           className={classes.root}
-          noValidate
-          autoComplete="off"
+          autoComplete="on"
           id="addempform"
         >
           <Grid item xs={3}>
@@ -202,7 +202,7 @@ const AddEmployee = () => {
               id="filled-error-helper-text"
               inputRef={register({
                 required: true,
-                minLenth: 3,
+                minLength: 3,
                 maxLength: 50
               })}
               label="First name"
@@ -215,7 +215,7 @@ const AddEmployee = () => {
           <Grid item xs={3}>
             <TextField
               id="outlined-basic"
-              inputRef={register({ maxLength: 50 })}
+              inputRef={register({maxLength: 50 })}
               label="Middle name"
               variant="outlined"
               name="middleName"
@@ -227,7 +227,7 @@ const AddEmployee = () => {
               id="outlined-basic"
               inputRef={register({
                 required: true,
-                minLenth: 3,
+                minLength: 3,
                 maxLength: 50
               })}
               label="Last name"
@@ -379,19 +379,19 @@ const AddEmployee = () => {
             </TextField>
           </Grid>
           <Grid item xs={3}>
-            {/* <TextField
+            <TextField
               id="outlined-basic"
               inputRef={register({ maxLength: 50 })}
               label="Approver"
               variant="outlined"
               name="approver"
-            /> */}
-            <TextField
+            />
+            {/* <TextField
               id="outlined-select"
               select
               required="true"
               label="Approver"
-              value={approver}
+              value={data.id}
               onChange={handleApproverChange}
               variant="outlined"
               style={{ width: "150px"}}
@@ -401,7 +401,7 @@ const AddEmployee = () => {
                   {option.firstName}
                 </MenuItem>
               ))}
-            </TextField>
+            </TextField> */}
 
           </Grid>
 
@@ -448,7 +448,7 @@ const AddEmployee = () => {
             <TextField
               required
               id="outlined-required"
-              inputRef={register({ required: true, maxLength: 50 })}
+              inputRef={register({ required: true, minLength: 5,  maxLength: 50 })}
               label="Password"
               variant="outlined"
               name="Password"
@@ -459,7 +459,7 @@ const AddEmployee = () => {
             <TextField
               required
               id="outlined-required"
-              inputRef={register({ required: true, maxLength: 50 })}
+              inputRef={register({ required: true, minLength: 5, maxLength: 50 })}
               label="Confirm password"
               variant="outlined"
               name="confirmPassword"
